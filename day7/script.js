@@ -1,33 +1,24 @@
 //día7
 
-function imprimircero() {
-    let zero = document.querySelector('#cero');
-    let content = document.querySelector('#cero').textContent;
-    console.log(`diste clik en ${content}`);
-    console.log(typeof(content));
-    zero.removeEventListener('click',mostrarNumero);
-    zero.addEventListener('click', mostrarNumero(0));
+let numeroMostrado = 0;
+function imprimirNumero(id) {
+    let numero = document.getElementById(id);
+    let numeroContenido = document.getElementById(id).textContent;
+    numero.removeEventListener('click',mostrarNumero);
+    numero.addEventListener('click', mostrarNumero(numeroContenido));
 }
 function mostrarNumero(numero) {
     let valor = numero;
     console.log(valor);
+    let valorEnPantalla = actualizaNumero(valor);
+    console.log(valorEnPantalla);
 }
-function imprimirNumero(id) {
-    // let uno = document.getElementById('uno');
-    // let unoContent = document.getElementById('uno').textContent;
-    // uno.addEventListener('click', function () {
-    //     console.log(unoContent);
-    // });
-
-
-    // let dos = document.getElementById('dos');
-    // let dosContent = document.getElementById('dos').textContent;
-    // dos.addEventListener('click', function () {
-    //     console.log(dosContent);
-    // });
-    let uno = document.getElementById(id);
-    let unoContent = document.getElementById(id).textContent;
-    uno.addEventListener('click', function () {
-        console.log(unoContent);
-    });
+function actualizaNumero(resultado) {
+    if (resultado === '0' || resultado == numeroMostrado) {
+        return;
+    } else{
+        let actualizar = numeroMostrado + resultado;
+        numeroMostrado = actualizar;
+        return numeroMostrado;
+    }
 }
