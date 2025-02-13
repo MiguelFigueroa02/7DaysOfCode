@@ -90,3 +90,7 @@ function calculofinal(numOne,numTwo,oper) {
     }
     console.log(`el resultado final es ${resultadoFinal}`);
 }
+//falta función para retornar resultado como primervalor y colocar segundoValor = 0
+//falta función para continuar con operación cuando se presiona el operador aritmético más de una vez
+//me falta botón de reinicio
+//falta función para que coloque resultado en la cajita donde se ingresa resultado numérico
