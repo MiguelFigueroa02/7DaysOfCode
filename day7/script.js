@@ -4,6 +4,9 @@ let numeroMostrado = '0';
 let primerValor;
 let segundoValor;
 let matematica;
+let matematica2;
+let operacionContinua;
+let valorEnPantalla;
 function imprimirNumero(id) {
     let numero = document.getElementById(id);
     let numeroContenido = document.getElementById(id).textContent;
@@ -14,23 +17,38 @@ function mostrarNumero(numero) {
     let valor = numero;
     //valor ingresado
     console.log(valor);
-    let valorEnPantalla = actualizaNumero(valor);
+    valorEnPantalla = actualizaNumero(valor);
     //Aquí es donde debo actualizar valor en pantalla
-    console.log(valorEnPantalla);
+    console.log(`el valor pantalla es ${valorEnPantalla}`);
 }
 function actualizaNumero(resultado) {
-    if (numeroMostrado === '0') {
-        numeroMostrado = resultado;
-        return numeroMostrado;
-    } else{
-        let actualizar = numeroMostrado + resultado;
-        numeroMostrado = actualizar;
-        return numeroMostrado;
+    if (resultado !== '+' || resultado !== '-' ||resultado !== '*' || resultado !== '/') {
+        if (numeroMostrado === '0') {
+            numeroMostrado = resultado;
+            return numeroMostrado;
+        } else{
+            let actualizar = numeroMostrado + resultado;
+            numeroMostrado = actualizar;
+            return numeroMostrado;
+        }
+    } else {
+        let mensaje = valorEnPantalla + resultado;
+        return mensaje;
     }
+    // if (numeroMostrado === '0') {
+    //     numeroMostrado = resultado;
+    //     return numeroMostrado;
+    // } else{
+    //     let actualizar = numeroMostrado + resultado;
+    //     numeroMostrado = actualizar;
+    //     return numeroMostrado;
+    // }
 }
 function calcular(operacion) {
     let calculo = document.getElementById(operacion);
     let calculoContenido = document.getElementById(operacion).textContent;
+    // valorEnPantalla = calculoContenido;
+    mostrarNumero(calculoContenido);
     console.log(calculoContenido);
     let numeroEnviado = parseInt(numeroMostrado);
     calculo.removeEventListener('click',operacionAritmetica);
@@ -42,12 +60,21 @@ function operacionAritmetica(num,simbolo) {
         console.log(`el primer valor es ${primerValor}`);
         matematica = simbolo;
         console.log(`el simbolo es ${simbolo}`);
-        numeroMostrado = '0';
-    } else if (segundoValor == null) {
+        numeroMostrado = '';
+    } else if (segundoValor == null || segundoValor === 0) {
         segundoValor = num;
-        numeroMostrado = '0'
+        numeroMostrado = ''
+        operacionContinua = true;
+        matematica2 = simbolo;
+        //esto es lo último 11:05 am
         console.log(`el segundo valor es ${segundoValor}`);
-    } 
+    } else {
+        calculofinal(primerValor,segundoValor,matematica);
+        segundoValor = num;
+        matematica = matematica2;
+        matematica2 = simbolo;
+        console.log(`hice un cálculo continuo`);
+    }
 }
 function igual() {
     let final = document.getElementById('igualdad');
@@ -89,6 +116,11 @@ function calculofinal(numOne,numTwo,oper) {
             break;
     }
     console.log(`el resultado final es ${resultadoFinal}`);
+    primerValor = resultadoFinal;
+    segundoValor = 0;
+    numeroMostrado = '';
+    mostrarNumero(String(resultadoFinal));
+    //return resultadoFinal;
 }
 //falta función para retornar resultado como primervalor y colocar segundoValor = 0
 //falta función para continuar con operación cuando se presiona el operador aritmético más de una vez
