@@ -7,11 +7,13 @@ let matematica;
 let matematica2;
 let operacionContinua;
 let valorEnPantalla;
+let actuazarPantalla;
 function imprimirNumero(id) {
     let numero = document.getElementById(id);
     let numeroContenido = document.getElementById(id).textContent;
     numero.removeEventListener('click',mostrarNumero);
     numero.addEventListener('click', mostrarNumero(numeroContenido));
+    actualizarPantalla = false;
 }
 function mostrarNumero(numero) {
     let valor = numero;
@@ -23,7 +25,7 @@ function mostrarNumero(numero) {
 }
 function actualizaNumero(resultado) {
     if (resultado !== '+' || resultado !== '-' ||resultado !== '*' || resultado !== '/') {
-        if (numeroMostrado === '0') {
+        if (numeroMostrado === '0' || actuazarPantalla) {
             numeroMostrado = resultado;
             return numeroMostrado;
         } else{
@@ -55,6 +57,7 @@ function calcular(operacion) {
     calculo.addEventListener('click',operacionAritmetica(numeroEnviado,calculoContenido));
 }   
 function operacionAritmetica(num,simbolo) {
+    //actualizar aquí para que no me haga un error al actualizar el numeroenpantalla
     if (primerValor == null) {
         primerValor = num;
         console.log(`el primer valor es ${primerValor}`);
@@ -120,6 +123,7 @@ function calculofinal(numOne,numTwo,oper) {
     segundoValor = 0;
     numeroMostrado = '';
     mostrarNumero(String(resultadoFinal));
+    actuazarPantalla = true;
     //return resultadoFinal;
 }
 //falta función para retornar resultado como primervalor y colocar segundoValor = 0
