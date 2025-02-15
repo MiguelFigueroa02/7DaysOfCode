@@ -13,7 +13,8 @@ function imprimirNumero(id) {
     let numeroContenido = document.getElementById(id).textContent;
     numero.removeEventListener('click',mostrarNumero);
     numero.addEventListener('click', mostrarNumero(numeroContenido));
-    actualizarPantalla = false;
+    // actualizarPantalla = false;
+    // actuazarPantalla = false;
 }
 function mostrarNumero(numero) {
     let valor = numero;
@@ -22,11 +23,19 @@ function mostrarNumero(numero) {
     valorEnPantalla = actualizaNumero(valor);
     //Aquí es donde debo actualizar valor en pantalla
     console.log(`el valor pantalla es ${valorEnPantalla}`);
+    if (segundoValor === 0) {
+        actuazarPantalla = true;
+    } else{
+        actuazarPantalla = false;
+    }
 }
 function actualizaNumero(resultado) {
     if (resultado !== '+' || resultado !== '-' ||resultado !== '*' || resultado !== '/') {
         if (numeroMostrado === '0' || actuazarPantalla) {
             numeroMostrado = resultado;
+            primerValor = undefined;
+            segundoValor = undefined;
+            actuazarPantalla = false;
             return numeroMostrado;
         } else{
             let actualizar = numeroMostrado + resultado;
@@ -58,13 +67,13 @@ function calcular(operacion) {
 }   
 function operacionAritmetica(num,simbolo) {
     //actualizar aquí para que no me haga un error al actualizar el numeroenpantalla
-    if (primerValor == null) {
+    if (primerValor === undefined) {
         primerValor = num;
         console.log(`el primer valor es ${primerValor}`);
         matematica = simbolo;
         console.log(`el simbolo es ${simbolo}`);
         numeroMostrado = '';
-    } else if (segundoValor == null || segundoValor === 0) {
+    } else if (segundoValor === undefined || segundoValor === 0) {
         segundoValor = num;
         numeroMostrado = ''
         operacionContinua = true;
@@ -82,7 +91,7 @@ function operacionAritmetica(num,simbolo) {
 function igual() {
     let final = document.getElementById('igualdad');
     final.removeEventListener('click',calculofinal);
-    if (primerValor == null && segundoValor == null) {
+    if (primerValor === undefined && segundoValor === segundoValor) {
         primerValor = parseInt(numeroMostrado);
         segundoValor = 0;
     } else {
@@ -123,8 +132,15 @@ function calculofinal(numOne,numTwo,oper) {
     segundoValor = 0;
     numeroMostrado = '';
     mostrarNumero(String(resultadoFinal));
-    actuazarPantalla = true;
+    // actuazarPantalla = true;
     //return resultadoFinal;
+}
+function reinicio() {
+    numeroMostrado = '0';
+    primerValor = undefined;
+    segundoValor = undefined;
+    valorEnPantalla = '0'
+    return;
 }
 //falta función para retornar resultado como primervalor y colocar segundoValor = 0
 //falta función para continuar con operación cuando se presiona el operador aritmético más de una vez
