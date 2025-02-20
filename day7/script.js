@@ -1,16 +1,17 @@
 //día7
-
-let numeroMostrado = '0';
+// let pantalla = document.querySelector('#pantalla');
+let numeroMostrado = '';
 let primerValor;
 let segundoValor;
 let matematica;
 let matematica2;
-let operacionContinua;
+// let operacionContinua;
 let valorEnPantalla;
-let actuazarPantalla;
+let nuevoNumero;
 function imprimirNumero(id) {
     let numero = document.getElementById(id);
     let numeroContenido = document.getElementById(id).textContent;
+    nuevoNumero = false;
     numero.removeEventListener('click',mostrarNumero);
     numero.addEventListener('click', mostrarNumero(numeroContenido));
     // actualizarPantalla = false;
@@ -19,25 +20,38 @@ function imprimirNumero(id) {
 function mostrarNumero(numero) {
     let valor = numero;
     //valor ingresado
-    console.log(valor);
+    // console.log(valor);
     valorEnPantalla = actualizaNumero(valor);
     //Aquí es donde debo actualizar valor en pantalla
-    console.log(`el valor pantalla es ${valorEnPantalla}`);
-    if (segundoValor === 0) {
-        actuazarPantalla = true;
-    } else{
-        actuazarPantalla = false;
-    }
+    // console.log(`el valor pantalla es ${valorEnPantalla}`);
+    let pantalla = document.querySelector('#pantalla');
+    pantalla.innerHTML = valorEnPantalla;
+    // if (segundoValor === 0) {
+    //     actuazarPantalla = true;
+    // } else{
+    //     actuazarPantalla = false;
+    // }
 }
 function actualizaNumero(resultado) {
-    if (resultado !== '+' || resultado !== '-' ||resultado !== '*' || resultado !== '/') {
-        if (numeroMostrado === '0' || actuazarPantalla) {
+    if (resultado !== '+' && resultado !== '-' && resultado !== '*' && resultado !== '/') {
+        if (nuevoNumero) {
             numeroMostrado = resultado;
-            primerValor = undefined;
-            segundoValor = undefined;
-            actuazarPantalla = false;
+            // primerValor = undefined;
+            // segundoValor = undefined;
+            nuevoNumero = false;
             return numeroMostrado;
-        } else{
+        }  else if (numeroMostrado ==='0' && resultado === '0') {
+            numeroMostrado = resultado;
+            // primerValor = undefined;
+            // segundoValor = undefined;
+            nuevoNumero = false;
+            return numeroMostrado;
+        } else if (numeroMostrado ==='0' && resultado === '.') {
+            let actualizar = numeroMostrado + resultado;
+            numeroMostrado = actualizar;
+            return numeroMostrado;
+        }
+        else{
             let actualizar = numeroMostrado + resultado;
             numeroMostrado = actualizar;
             return numeroMostrado;
@@ -60,8 +74,8 @@ function calcular(operacion) {
     let calculoContenido = document.getElementById(operacion).textContent;
     // valorEnPantalla = calculoContenido;
     mostrarNumero(calculoContenido);
-    console.log(calculoContenido);
-    let numeroEnviado = parseInt(numeroMostrado);
+    // console.log(calculoContenido);
+    let numeroEnviado = parseFloat(numeroMostrado);
     calculo.removeEventListener('click',operacionAritmetica);
     calculo.addEventListener('click',operacionAritmetica(numeroEnviado,calculoContenido));
 }   
@@ -69,34 +83,37 @@ function operacionAritmetica(num,simbolo) {
     //actualizar aquí para que no me haga un error al actualizar el numeroenpantalla
     if (primerValor === undefined) {
         primerValor = num;
-        console.log(`el primer valor es ${primerValor}`);
+        // console.log(`el primer valor es ${primerValor}`);
         matematica = simbolo;
-        console.log(`el simbolo es ${simbolo}`);
-        numeroMostrado = '';
+        // console.log(`el simbolo es ${simbolo}`);
+        numeroMostrado = "";
+        nuevoNumero = true;
     } else if (segundoValor === undefined || segundoValor === 0) {
         segundoValor = num;
-        numeroMostrado = ''
-        operacionContinua = true;
+        numeroMostrado = undefined;
         matematica2 = simbolo;
         //esto es lo último 11:05 am
-        console.log(`el segundo valor es ${segundoValor}`);
-    } else {
         calculofinal(primerValor,segundoValor,matematica);
-        segundoValor = num;
+        nuevoNumero = true;
         matematica = matematica2;
-        matematica2 = simbolo;
-        console.log(`hice un cálculo continuo`);
     }
+    // else {
+    //     calculofinal(primerValor,segundoValor,matematica);
+    //     segundoValor = num;
+    //     matematica = matematica2;
+    //     matematica2 = simbolo;
+    //     console.log(`hice un cálculo continuo`);
+    // }
 }
 function igual() {
     let final = document.getElementById('igualdad');
     final.removeEventListener('click',calculofinal);
-    if (primerValor === undefined && segundoValor === segundoValor) {
-        primerValor = parseInt(numeroMostrado);
+    if (primerValor === undefined && segundoValor === undefined) {
+        primerValor = parseFloat(numeroMostrado);
         segundoValor = 0;
     } else {
-        segundoValor = parseInt(numeroMostrado);
-        console.log(`el segundo valor obtenido con el boton igual es ${segundoValor}`);
+        segundoValor = parseFloat(numeroMostrado);
+        // console.log(`el segundo valor obtenido con el boton igual es ${segundoValor}`);
     }
     final.addEventListener('click',calculofinal(primerValor,segundoValor,matematica));
 }
@@ -128,18 +145,21 @@ function calculofinal(numOne,numTwo,oper) {
             break;
     }
     console.log(`el resultado final es ${resultadoFinal}`);
-    primerValor = resultadoFinal;
-    segundoValor = 0;
-    numeroMostrado = '';
-    mostrarNumero(String(resultadoFinal));
+    primerValor = undefined;
+    segundoValor = undefined;
+    numeroMostrado = String(resultadoFinal.toFixed(2));
+    nuevoNumero = true;
+    mostrarNumero(numeroMostrado);
     // actuazarPantalla = true;
     //return resultadoFinal;
 }
 function reinicio() {
-    numeroMostrado = '0';
+    numeroMostrado = '';
     primerValor = undefined;
     segundoValor = undefined;
+    nuevoNumero = true;
     valorEnPantalla = '0'
+    mostrarNumero(valorEnPantalla);
     return;
 }
 //falta función para retornar resultado como primervalor y colocar segundoValor = 0
