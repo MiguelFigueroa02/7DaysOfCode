@@ -40,18 +40,19 @@ function actualizaNumero(resultado) {
             // segundoValor = undefined;
             nuevoNumero = false;
             return numeroMostrado;
-        }  else if (numeroMostrado ==='0' && resultado === '0') {
-            numeroMostrado = resultado;
-            // primerValor = undefined;
-            // segundoValor = undefined;
-            nuevoNumero = false;
-            return numeroMostrado;
-        } else if (numeroMostrado ==='0' && resultado === '.') {
-            let actualizar = numeroMostrado + resultado;
-            numeroMostrado = actualizar;
-            return numeroMostrado;
-        }
-        else{
+        }  else if (numeroMostrado ==='0') {
+            if (resultado === '.') {
+                let actualizar = numeroMostrado + resultado;
+                numeroMostrado = actualizar;
+                return numeroMostrado;
+            } else{
+                numeroMostrado = resultado;
+                // primerValor = undefined;
+                // segundoValor = undefined;
+                nuevoNumero = false;
+                return numeroMostrado;
+            }
+        } else{
             let actualizar = numeroMostrado + resultado;
             numeroMostrado = actualizar;
             return numeroMostrado;
