@@ -95,7 +95,10 @@ function operacionAritmetica(num,simbolo) {
         matematica2 = simbolo;
         //esto es lo último 11:05 am
         calculofinal(primerValor,segundoValor,matematica);
+        primerValor = parseFloat(numeroMostrado);
+        numeroMostrado = '';
         nuevoNumero = true;
+        mostrarNumero(numeroMostrado);
         matematica = matematica2;
     }
     // else {
@@ -148,7 +151,12 @@ function calculofinal(numOne,numTwo,oper) {
     console.log(`el resultado final es ${resultadoFinal}`);
     primerValor = undefined;
     segundoValor = undefined;
-    numeroMostrado = String(resultadoFinal.toFixed(2));
+    // Redondear resultados a dos decimales si incluye punto para evitar error de parse.float()
+    if (String(resultadoFinal).includes('.')) {
+        numeroMostrado = String(resultadoFinal.toFixed(2));
+    } else{
+        numeroMostrado = String(resultadoFinal);
+    }
     nuevoNumero = true;
     mostrarNumero(numeroMostrado);
     // actuazarPantalla = true;
