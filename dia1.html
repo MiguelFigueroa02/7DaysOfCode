@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./day1/script.js"></script>
+    <title>Día 1</title>
+</head>
+<body>
+    <section class="botones">
+        <h2 class="botones__titulo">Variables tipo String</h2>
+        <ul class="strings">
+            <li class="strings__lista">
+                <button class="string__lista__boton" onclick="asignarVariable('1');">'1'</button>
+            </li>
+            <li class="strings__lista">
+                <button class="string__lista__boton" onclick="asignarVariable('10');">'10'</button>
+            </li>
+            <li class="strings__lista">
+                <button class="string__lista__boton" onclick="asignarVariable('30');">'30'</button>
+            </li>
+        </ul>
+        <h2 class="botones__titulo">Variables tipo Number</h2>
+        <ul class="numbers">
+            <li class="numbers__lista">
+                <button class="numbers__lista__boton" onclick="asignarVariable(1);">1</button>
+            </li>
+            <li class="numbers__lista">
+                <button class="numbers__lista__boton" onclick="asignarVariable(10);">10</button>
+            </li>
+            <li class="numbers__lista">
+                <button class="numbers__lista__boton" onclick="asignarVariable(30);">30</button>
+            </li>
+        </ul>
+    </section>
+    <section class="comparar">
+        <div class="comparar__seccion">
+            <h2 class="comparar__seccion__encabezado">Compara si su valor y su tipo coinciden</h2>
+            <button id="comparar__seccion__Valor" onclick="comparaValor();" disabled>Inténtalo</button>
+        </div>
+    </section>
+    <a href="./index.html">Volver</a>
+</body>
+</html>
