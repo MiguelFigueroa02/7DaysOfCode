@@ -1,18 +1,24 @@
 // día 1
 let variableUno;
 let variableDos;
+let selectorMensajeUno = '#botones__var_uno';
+let selectorMensajeDos = '#botones__var_dos';
+let selectorComparacion = '#comparar__seccion_resultado';
 
 function asignarVariable(valor) {
     if (!variableUno) {
         variableUno = valor;
-        imprimirResult(variableUno);
+        imprimirResult(variableUno,selectorMensajeUno);
+        imprimirTexto(selectorComparacion,'');
     } else if (!variableDos){
         variableDos = valor;
-        imprimirResult(variableDos);
+        imprimirResult(variableDos,selectorMensajeDos);
     }
 }
-function imprimirResult(variable) {
-    console.log(`La variable tiene un valor de ${variable} y es de tipo ${typeof(variable)}`);
+function imprimirResult(variable,selector) {
+    // console.log(`La variable tiene un valor de ${variable} y es de tipo ${typeof(variable)}`);
+    let textoVariable = `La variable tiene un valor de ${variable} y es de tipo ${typeof(variable)}`;
+    imprimirTexto(selector,textoVariable);
     if (variableUno && variableDos) {
         document.querySelectorAll('.numbers__lista__boton').forEach(boton => {
             boton.setAttribute('disabled','true');
@@ -24,15 +30,22 @@ function imprimirResult(variable) {
     }
 }
 function comparaValor(){
+    let textoComparacion;
     if (variableUno === variableDos) {
-        console.log(`La variable ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} son del mismo valor y del mismo tipo`);
+        // console.log(`La variable ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} son del mismo valor y del mismo tipo`);
+        textoComparacion = `La variable ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} son del mismo valor y del mismo tipo`;
     } else {
         if (variableUno == variableDos) {
-            console.log(`Las variables ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} tienen el mismo valor, pero tipos diferentes`);
+            // console.log(`Las variables ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} tienen el mismo valor, pero tipos diferentes`);
+            textoComparacion = `Las variables ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} tienen el mismo valor, pero tipos diferentes`;
         } else {
-            console.log(`Las variables ${typeof(variableUno)} ${variableUno} del tipo y ${typeof(variableDos)} ${variableDos} tienen diferentes valor y tipo`);
+            // console.log(`Las variables ${typeof(variableUno)} ${variableUno} del tipo y ${typeof(variableDos)} ${variableDos} tienen diferentes valor y tipo`);
+            textoComparacion = `Las variables ${typeof(variableUno)} ${variableUno} del tipo y ${typeof(variableDos)} ${variableDos} tienen diferentes valor y tipo`;
         }
     }
+    imprimirTexto(selectorComparacion,textoComparacion);
+    imprimirTexto(selectorMensajeUno,'');
+    imprimirTexto(selectorMensajeDos,'');
     reinicio();
 }
 
@@ -46,4 +59,9 @@ function reinicio() {
     document.getElementById('comparar__seccion__Valor').setAttribute('disabled','true');
     variableUno = undefined;
     variableDos = undefined;
+}
+function imprimirTexto(etiqueta,texto){
+    let elemento = document.querySelector(etiqueta);
+    elemento.innerHTML =texto;
+    return;
 }
