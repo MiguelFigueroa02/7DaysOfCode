@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./day3/style.css">
+    <script src="./day3/script.js"></script>
+    <title>Día 3</title>
+</head>
+<body>
+    <a href="./index.html">Volver</a>
+    <main>
+        <button onclick="mostrarDialogo()">Pruébalo</button>
+        <dialog id="pregunta">
+            <form id="pregunta__form" method="dialog">
+                <label>¿Quieres seguir especializándote?</label>
+                <button class="pregunta__boton" onclick="camino('Sí');">Sí</button>
+                <button class="pregunta__boton" onclick="camino('No');">No</button>
+            </form>
+        </dialog>
+        <form class="camino hidden" id="camino">
+            <label id="camino__label">¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
+            <button class="camino__boton" >Front-End</button>
+            <button class="camino__boton">Back-End</button>
+        </form>
+    </main>
+</body>
+</html>
