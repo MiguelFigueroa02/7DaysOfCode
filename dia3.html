@@ -10,16 +10,16 @@
 <body>
     <a href="./index.html">Volver</a>
     <main>
-        <button onclick="mostrarDialogo()">Pruébalo</button>
+        <button onclick="mostrarDialogo()" id="probar">Pruébalo</button>
         <dialog id="pregunta">
             <form id="pregunta__form" method="dialog">
-                <label>¿Quieres seguir especializándote?</label>
+                <label for="pregunta__boton">¿Quieres seguir especializándote?</label>
                 <button class="pregunta__boton" onclick="camino('Sí');">Sí</button>
                 <button class="pregunta__boton" onclick="camino('No');">No</button>
             </form>
         </dialog>
         <form class="camino hidden" id="camino">
-            <label id="camino__label">¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
+            <label for="camino__boton" id="camino__label">¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
             <button type="button" class="camino__boton"  onclick="especializacion('Front-End');">Front-End</button>
             <button type="button" class="camino__boton" onclick="especializacion('Back-End');">Back-End</button>
         </form>
@@ -33,6 +33,24 @@
         <div class="resultadoFinal hidden" id="resultado">
             <p id="resultado__mensaje"></p>
             <button id="resultado__boton" onclick="botonResultado()">¡Genial 😁!</button>
+        </div>
+        <dialog id="nuevaTec">
+            <form method="dialog" id="nuevaTec__Form">
+                <label>¿Hay alguna otra tecnología que te gustaría aprender?</label>
+                <button class="nuevaTec__Form_button" onclick="nuevasTecnologias('Ok')">Ok!👍</button><button class="nuevaTec__Form_button" onclick="nuevasTecnologias('No')">No</button>
+            </form>
+        </dialog>
+        <form action="" class="tecnologiasNuevas hidden" id="tecnologias">
+            <label for="nuevaTecnologia" id="tecnologias__label">Ingrese nueva Tecnología</label>
+            <input type="text" name="nuevaTecnologia" id="tecnologias__input" placeholder="Nueva Tecnología">
+            <button type="button" id="tecnologias__boton" onclick="enviarNuevaTecnologia();">Enviar</button>
+        </form>
+        <div id="tecnologiaResultado" class="hidden">
+            <p id="tecnologiaResultado__mensaje"></p>
+            <button type="button" id="tecnologiaResultado__boton" onclick="mostrarDialogo2()" disabled>¡Qué bien!</button>
+        </div>
+        <div class="mensajeFinal">
+            <p id="mensajefinal"></p>
         </div>
     </main>
 </body>
