@@ -20,9 +20,20 @@
         </dialog>
         <form class="camino hidden" id="camino">
             <label id="camino__label">¿Quieres seguir hacia el área de Front-End o seguir hacia el área de Back-End?</label>
-            <button class="camino__boton" >Front-End</button>
-            <button class="camino__boton">Back-End</button>
+            <button type="button" class="camino__boton"  onclick="especializacion('Front-End');">Front-End</button>
+            <button type="button" class="camino__boton" onclick="especializacion('Back-End');">Back-End</button>
         </form>
+        <form class="especializaciones hidden" id="eleccionEspecializacion">
+            <label id="especializaciones__pregunta">¿Cuál de las siguientes tecnologías quieres aprender?</label>
+            <button type="button" class="especializaciones__front hidden" id="React" onclick="lenguaje('React');">React</button>
+            <button type="button" class="especializaciones__front hidden" id="Vue" onclick="lenguaje('Vue');">Vue</button>
+            <button type="button" class="especializaciones__back hidden" id="C#" onclick="lenguaje('C#');">C#</button>
+            <button type="button" class="especializaciones__back hidden" id="Java" onclick="lenguaje('Java');">Java</button>
+        </form>
+        <div class="resultadoFinal hidden" id="resultado">
+            <p id="resultado__mensaje"></p>
+            <button id="resultado__boton" onclick="botonResultado()">¡Genial 😁!</button>
+        </div>
     </main>
 </body>
 </html>
