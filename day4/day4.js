@@ -77,6 +77,7 @@ function reinicio() {
     intentoActual = 0;
     numeroSecreto = undefined;
     numeroJesus = undefined;
+    mensaje('');
     // encendidoBotones();
     let botonJugar = document.querySelector('.resultado__iniciar');
     botonJugar.removeAttribute('disabled');
@@ -98,22 +99,34 @@ function juego() {
     let textoUno = 'Sigue intetando.'
     while(intentoActual<=maximoIntentos){
         if (numeroJesus === numeroSecreto) {
-            alert(`Felicidades, el número secreto es ${numeroSecreto}`);
+            // alert(`Felicidades, el número secreto es ${numeroSecreto}`);
+            let textoGanador = `Felicidades, el número secreto es ${numeroSecreto}. `;
+            let textoGanador2 = `Atinaste en ${intentoActual}` + " " + (intentoActual === 1 ? 'intento': 'intentos');
+            let textoFinal = textoGanador + textoGanador2;
+            mensaje(textoFinal);
             apagadoBotones();
             break;
           } else {
             if (maximoIntentos === intentoActual) {
-              alert(`Fallaste, el número secreto es ${numeroSecreto}`);
-              apagadoBotones();
-              break;
+            //   alert(`Fallaste, el número secreto es ${numeroSecreto}`);
+                let textoFault = `Fallaste, el número secreto es ${numeroSecreto}`;
+                mensaje(textoFault);
+                apagadoBotones();
+                break;
             } else {
+                let textoContinuar;
                 if (numeroSecreto > numeroJesus) {
-                    alert(textoUno+' El número secreto es mayor');
+                    // alert(textoUno+' El número secreto es mayor');
+                    textoContinuar = textoUno+' El número secreto es mayor';
+                    mensaje(textoContinuar);
                 } else if(numeroSecreto < numeroJesus){
-                    alert(textoUno+' El número secreto es menor');
+                    // alert(textoUno+' El número secreto es menor');
+                    textoContinuar = textoUno+' El número secreto es menor';
+                    mensaje(textoContinuar);
                 }
             //   alert("Sigue intetando");
-              return;
+                
+                return;
             }
           }
     }
@@ -121,3 +134,37 @@ function juego() {
         console.log('ni pepsi');
     }
   }
+  function mensaje(texto){
+    let textoMensaje = texto;
+    let parrafo = document.querySelector('.resultado__parrafo');
+    parrafo.innerHTML = textoMensaje;
+  }
+// función con ciclo for
+let numeroUsuario;
+  function seleccionUsuario() {
+    let pregunta = parseInt(prompt("¿Cuál crees que es el número secreto"));
+    return pregunta;
+    
+  }
+  function iniciarJuego() {
+    numeroUsuario = seleccionUsuario();
+    juego2();
+  }
+//   let numeroUsuario = seleccionUsuario();
+  function juego2() {
+    for (let i = 1; i <= maximoIntentos; i++) {
+      console.log(`intentos ${i}`);
+      if (numeroUsuario === numeroSecreto) {
+        alert(`Felicidades, el número secreto es ${numeroSecreto}`);
+        break;
+      } else {
+        if (maximoIntentos == i) {
+          alert(`Fallaste, el número secreto es ${numeroSecreto}`);
+        } else {
+          alert("Sigue intetando");
+          numeroUsuario = seleccionUsuario();
+        }
+      }
+    }
+  }
+//   juego2();
