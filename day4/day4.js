@@ -4,14 +4,25 @@ let minimo = 0;
 let maximoIntentos = 3;
 let intentoActual = 0;
 let numeroSecreto;
+let numerosJuego2 = [];
 function numeroAzar() {
     numeroSecreto = Math.floor(Math.random() *(maximo - minimo) + minimo);
     console.log(numeroSecreto);
+    let botonesJuegos = document.getElementById('contenedorBotonesJuego');
+    botonesJuegos.classList.remove('hidden');
     let boton = document.querySelector('.resultado__iniciar');
     boton.setAttribute('disabled','true');
     encendidoBotones();
 }
-
+function esconderBotonesJuegos(){
+  let botonesParaEsconder = document.getElementById('contenedorBotonesJuego');
+  botonesParaEsconder.classList.add('hidden');
+}
+function cicloWhile() {
+  esconderBotonesJuegos();
+  let botonesCicloWhile = document.getElementById('botones_Ciclo_While');
+  botonesCicloWhile.classList.remove('hidden');
+}
 // function eleccionUsuario(valor,id) {
 //     let numeroUsuario = valor;
 //     let boton = document.getElementById(id);
@@ -50,11 +61,16 @@ function boton() {
     })
     
 }
+function activarBotonReinicio() {
+  let botonreinicio = document.getElementById('boton__reinicio');
+  botonreinicio.classList.remove('hidden');
+}
 document.addEventListener('DOMContentLoaded', boton);
 function apagadoBotones() {
     let botonesApagar = document.querySelectorAll('.juego_boton');
-    let botonreinicio = document.getElementById('boton__reinicio');
-    botonreinicio.classList.remove('hidden');
+    // let botonreinicio = document.getElementById('boton__reinicio');
+    // botonreinicio.classList.remove('hidden');
+    activarBotonReinicio();
     botonesApagar.forEach(botonApagar=>{
         if (botonApagar.hasAttribute('disabled')) {
             return;
@@ -79,6 +95,8 @@ function reinicio() {
     numeroJesus = undefined;
     mensaje('');
     // encendidoBotones();
+    let esconderCicloWhile = document.getElementById('botones_Ciclo_While');
+    esconderCicloWhile.classList.add('hidden');
     let botonJugar = document.querySelector('.resultado__iniciar');
     botonJugar.removeAttribute('disabled');
     let botonreiniciar = document.getElementById('boton__reinicio');
@@ -141,28 +159,61 @@ function juego() {
   }
 // función con ciclo for
 let numeroUsuario;
-  function seleccionUsuario() {
-    let pregunta = parseInt(prompt("¿Cuál crees que es el número secreto"));
+  function seleccionUsuario(texto) {
+    let mensajeUsuario = "¿Cuál crees que es el número secreto?"
+    if (texto !== undefined) {
+      mensajeUsuario = mensajeUsuario + texto;
+    }
+    let pregunta = Number(prompt(mensajeUsuario));
     return pregunta;
     
   }
   function iniciarJuego() {
     numeroUsuario = seleccionUsuario();
     juego2();
+    esconderBotonesJuegos();
+    activarBotonReinicio();
   }
 //   let numeroUsuario = seleccionUsuario();
+let numerosJugados;
   function juego2() {
     for (let i = 1; i <= maximoIntentos; i++) {
+      if (numerosJuego2.includes(numeroUsuario)) {
+        alert(`Ya habías jugado el número ${numeroUsuario}, Intenta nuevamente`);
+        numeroUsuario = seleccionUsuario(numerosJugados);
+      } else if (isNaN(numeroUsuario) || numeroUsuario > 10) {
+        alert('Ingresa un valor válido');
+        numeroUsuario = seleccionUsuario(numerosJugados);
+      }
+      console.log (`El número de usuario es ${numeroUsuario}`);
       console.log(`intentos ${i}`);
       if (numeroUsuario === numeroSecreto) {
         alert(`Felicidades, el número secreto es ${numeroSecreto}`);
+        numerosJuego2 = [];
         break;
       } else {
         if (maximoIntentos == i) {
           alert(`Fallaste, el número secreto es ${numeroSecreto}`);
+          numerosJuego2 = [];
+          break;
         } else {
-          alert("Sigue intetando");
-          numeroUsuario = seleccionUsuario();
+          numerosJuego2.push(numeroUsuario);
+          numerosJugados = 'Los números jugados son: ';
+          for (let index = 0; index < numerosJuego2.length; index++) {
+            numerosJugados = numerosJugados + String(numerosJuego2[index]) + ((index < numerosJuego2.length -1)? ",":" ");
+          }
+
+
+          let mensajeAlert = "Sigue intetando. "
+          if (numeroUsuario > numeroSecreto) {
+            mensajeAlert = mensajeAlert + "El número Secreto es menor";
+            
+            alert(mensajeAlert);
+          } else if(numeroUsuario < numeroSecreto){
+            mensajeAlert = mensajeAlert + "El número Secreto es mayor";
+            alert(mensajeAlert);
+          }
+          numeroUsuario = seleccionUsuario(numerosJugados);
         }
       }
     }

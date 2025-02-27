@@ -13,11 +13,11 @@
             <button class="resultado__iniciar" onclick="numeroAzar();">¡Vamos a intentarlo!</button>
             <p class="resultado__parrafo"></p>
         </div>
-        <div class="eleccionJuego">
+        <div class="eleccionJuego hidden" id="contenedorBotonesJuego">
             <button class="eleccion_juego" onclick="iniciarJuego();">inténtalo con un ciclo For!</button>
-            <button class="eleccion_juego">inténtalo con un ciclo while!</button>
+            <button class="eleccion_juego" onclick="cicloWhile();">inténtalo con un ciclo while!</button>
         </div>
-        <div class="juego">
+        <div class="juego hidden" id="botones_Ciclo_While">
             <div class="juego__dialogo__forma">
                 <!-- <button type="button" class="juego__boton" id="cero" onclick="eleccionUsuario(0,'cero');">0</button>
                 <button type="button" class="juego__boton" id="uno" onclick="eleccionUsuario(1,'uno');">1</button>
@@ -42,9 +42,9 @@
                 <button class="juego_boton" value="9" disabled>9</button>
                 <button class="juego_boton" value="10" disabled>10</button>
             </div>
-            <div class="reiniciar">
-                <button type="button" class="reiniciar__button hidden" id="boton__reinicio" onclick="reinicio();">¡Quiero volver a jugar!</button>
-            </div>
+        </div>
+        <div class="reiniciar">
+            <button type="button" class="reiniciar__button hidden" id="boton__reinicio" onclick="reinicio();">¡Quiero volver a jugar!</button>
         </div>
         <a href="./index.html">Volver</a>
     </main>
