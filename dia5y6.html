@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./day5y6/day5_y_6.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="iniciar">
+            <button type="button" class="iniciar__boton" onclick="cuadroDeDialogo();">¡Vamos a intentarlo!</button>
+        </div>
+        <dialog id="ingreso">
+            <form action="" class="ingreso__forma">
+                <label for="" class="ingreso__forma__label">¿Deseas agregar un alimento a tu lista de compras?</label>
+                <button type="button" class="ingreso__forma__boton" onclick="seleccionUsuario('Sí');">Sí</button>
+                <button type="button" class="ingreso__forma__boton" onclick="seleccionUsuario('No');">No</button>
+            </form>
+        </dialog>
+        <!-- <form class="informacionAlimento">
+            <label for="alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
+            <input type="text" name="" id="informacionAlimento__input" name="alimento" placeholder="Nombre del alimento">
+            <label for="categoria_alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
+            <select name="categoria_alimento" id="informacionAlimento__seleccion" disabled>
+                <option value="" class="informacionAlimento__seleccion__categoria">Frutas</option>
+                <option value="" class="informacionAlimento__seleccion__categoria">Lácteos</option>
+                <option value="" class="informacionAlimento__seleccion__categoria">Congelados</option>
+                <option value="" class="informacionAlimento__seleccion__categoria">Dulces</option>
+            </select>
+        </form> -->
+        <dialog id="alimento">
+            <form class="informacionAlimento">
+                <label for="alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
+                <input type="text" id="informacionAlimento__input" name="alimento" placeholder="Nombre del alimento">
+                <label for="categoria_alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
+                <select name="categoria_alimento" id="informacionAlimento__seleccion" disabled>
+                    <option value="" class="informacionAlimento__seleccion__categoria"></option>
+                    <option value="Frutas" class="informacionAlimento__seleccion__categoria">Frutas</option>
+                    <option value="Lácteos" class="informacionAlimento__seleccion__categoria">Lácteos</option>
+                    <option value="Congelados" class="informacionAlimento__seleccion__categoria">Congelados</option>
+                    <option value="Dulces" class="informacionAlimento__seleccion__categoria">Dulces</option>
+                </select>
+                <button type="button" id="informacionAlimento__boton" onclick="guardarAlimento()">Guardar 💾</button>
+            </form>
+        </dialog>
+        <dialog id="mensajeGuardado">
+            <p id="mensajeGuardado__texto"></p>
+            <button type="button" id="mensajeGuardado__boton" onclick="continuar();">Aceptar</button>
+        </dialog>
+        <div class="resultados">
+            <div class="resultados__categorias" id="resultados__frutas">
+                <h2 class="resultados__categorias_titulo" id="titulo_frutas"></h2>
+                <ul class="resultados__categorias__lista" id="listado_frutas"></ul>
+                <form action="" class="resultados__categorias__forma">
+                    <select name="Lista_frutas" id="Lista_frutas">
+                        <option value=""></option>
+                    </select>
+                </form>
+            </div>
+            <div class="resultados__categorias" id="resultados__lacteos">
+                <h2 class="resultados__categorias_titulo" id="titulo_lacteos"></h2>
+                <ul class="resultados__categorias__lista" id="listado_lacteos"></ul>
+                <form action="" class="resultados__categorias__forma">
+                    <select name="Lista_lacteos" id="Lista_lacteos">
+                        <option value=""></option>
+                    </select>
+            </div>
+            <div class="resultados__categorias" id="resultados__congelados">
+                <h2 class="resultados__categorias_titulo" id="titulo_congelados"></h2>
+                <ul class="resultados__categorias__lista" id="listado_congelados"></ul>
+                <form action="" class="resultados__categorias__forma">
+                    <select name="Lista_congelados" id="Lista_congelados">
+                        <option value=""></option>
+                    </select>
+            </div>
+            <div class="resultados__categorias" id="resultados__dulces">
+                <h2 class="resultados__categorias_titulo" id="titulo_dulces"></h2>
+                <ul class="resultados__categorias__lista" id="listado_dulces"></ul>
+                <form action="" class="resultados__categorias__forma">
+                    <select name="Lista_dulces" id="Lista_dulces">
+                        <option value=""></option>
+                    </select>
+            </div>
+        </div>
+    </main>
+    <a href="./index.html">Volver</a>
+</body>
+</html>
