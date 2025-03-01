@@ -79,6 +79,8 @@ function cuadroDialogo2() {
 //     document.querySelector('#informacionAlimento__seleccion').removeAttribute('disabled');
 // })
 document.addEventListener('DOMContentLoaded', function() {
+    // Ver si se elimina
+    eliminarForma();
     let input = document.querySelector('#informacionAlimento__input');
     let seleccion = document.querySelector('#informacionAlimento__seleccion');
     if (input && seleccion) {
@@ -149,3 +151,15 @@ function continuar(){
     })
     cuadroDeDialogo();
 }
+
+let eleccionEliminar2;
+function eliminarForma() {
+    document.querySelectorAll('.eliminar__forma__boton').forEach(boton=>{
+        boton.addEventListener('click', function () {
+            eleccionEliminar2 = this.value;
+            // console.log('el valor es'+ eleccionEliminar2);
+        })
+    })
+}
+
+// eliminarForma();
