@@ -3,6 +3,10 @@ let frutas = [];
 let lacteos = [];
 let congelados = [];
 let dulces = [];
+let actualizarFrutas = false;
+let actualizarLacteos = false;
+let actualizarCongelados = false;
+let actualizarDulces = false;
 // mostrar cuadro de texto para seleccionar si se quiere ingresar más información
 function cuadroDeDialogo() {
     let cuadro = document.getElementById('ingreso');
@@ -11,12 +15,17 @@ function cuadroDeDialogo() {
 function salir() {
     let cuadro = document.getElementById('ingreso');
     cuadro.close();
+    actualizarFrutas = true;
+    actualizarLacteos = true;
+    actualizarCongelados = true;
+    actualizarDulces = true;
     imprimirValores();
     let preguntaEliminar = document.getElementById('eliminar__forma');
     preguntaEliminar.classList.remove('hidden');
 }
 function imprimirValores() {
-    if (frutas.length > 0) {
+    if (frutas.length > 0 && actualizarFrutas) {
+        actualizarFrutas = false;
         let tituloFrutas = document.querySelector('#titulo_frutas');
         tituloFrutas.innerHTML = 'Frutas';
         let listadoFrutas = document.getElementById('listado_frutas');
@@ -31,7 +40,8 @@ function imprimirValores() {
             formularioFrutas.appendChild(frutaOpcion);
         }
     }
-    if (lacteos.length > 0) {
+    if (lacteos.length > 0 && actualizarLacteos) {
+        actualizarLacteos = false;
         let tituloLacteos = document.querySelector('#titulo_lacteos');
         tituloLacteos.innerHTML = 'Lacteos';
         let listadoLacteos = document.getElementById('listado_lacteos');
@@ -44,9 +54,11 @@ function imprimirValores() {
             lacteoOpcion.textContent = lacteos [i];
             lacteoOpcion.value = lacteos [i];
             formularioLacteos.appendChild(lacteoOpcion);
+
         }
     }
-    if (congelados.length > 0) {
+    if (congelados.length > 0 && actualizarCongelados) {
+        actualizarCongelados = false;
         let tituloCongelados = document.querySelector('#titulo_congelados');
         tituloCongelados.innerHTML = 'Congelados';
         let listadoCongelados = document.getElementById('listado_congelados');
@@ -61,7 +73,8 @@ function imprimirValores() {
             formularioCongelados.appendChild(congeladosOpcion);
         }
     }
-    if (dulces.length > 0) {
+    if (dulces.length > 0 && actualizarDulces) {
+        actualizarDulces = false;
         let tituloDulces = document.querySelector('#titulo_dulces');
         tituloDulces.innerHTML = 'Dulces';
         let listadoDulces = document.getElementById('listado_dulces');
@@ -223,6 +236,7 @@ function frutaElegida() {
     console.log(`elegiste la fruta ${frutaEliminar}`);
     frutas = frutas.filter(fruta => fruta !==frutaEliminar);
     alert(`Se elimina ${frutaEliminar} de la categoría de Frutas`);
+    actualizarFrutas = true;
     actualizarListas('listado_frutas','Lista_frutas');
 }
 function lacteoElegido() {
@@ -231,6 +245,7 @@ function lacteoElegido() {
     console.log(`elegiste  ${lacteoEliminar}`);
     lacteos = lacteos.filter(lacteo => lacteo !==lacteoEliminar);
     alert(`Se elimina ${lacteoEliminar} de la categoría de Lácteos`);
+    actualizarLacteos = true;
     actualizarListas('listado_lacteos','Lista_lacteos');
 }
 function congeladoElegido() {
@@ -239,6 +254,7 @@ function congeladoElegido() {
     console.log(`elegiste  ${congeladoEliminar}`);
     congelados = congelados.filter(congelado => congelado !== congeladoEliminar);
     alert(`Se elimina ${congeladoEliminar} de la categoría de congelados`);
+    actualizarCongelados = true;
     actualizarListas('listado_congelados','Lista_congelados');
 }
 function dulceElegido() {
@@ -247,6 +263,7 @@ function dulceElegido() {
     console.log(`elegiste  ${dulceEliminar}`);
     dulces = dulces.filter(dulce => dulce !== dulceEliminar);
     alert(`Se elimina ${dulceEliminar} de la categoría de dulces`);
+    actualizarDulces = true;
     actualizarListas('listado_dulces','Lista_dulces');
 }
 function actualizarListas(IdListado,IdSelect) {
