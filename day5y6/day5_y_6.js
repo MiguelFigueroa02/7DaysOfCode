@@ -12,6 +12,8 @@ function salir() {
     let cuadro = document.getElementById('ingreso');
     cuadro.close();
     imprimirValores();
+    let preguntaEliminar = document.getElementById('eliminar__forma');
+    preguntaEliminar.classList.remove('hidden');
 }
 function imprimirValores() {
     if (frutas.length > 0) {
@@ -25,6 +27,7 @@ function imprimirValores() {
             listadoFrutas.appendChild(nuevaFruta);
             let frutaOpcion = document.createElement('option');
             frutaOpcion.textContent = frutas [i];
+            frutaOpcion.value = frutas [i];
             formularioFrutas.appendChild(frutaOpcion);
         }
     }
@@ -39,6 +42,7 @@ function imprimirValores() {
             listadoLacteos.appendChild(nuevoLacteo);
             let lacteoOpcion = document.createElement('option');
             lacteoOpcion.textContent = lacteos [i];
+            lacteoOpcion.value = lacteos [i];
             formularioLacteos.appendChild(lacteoOpcion);
         }
     }
@@ -53,6 +57,7 @@ function imprimirValores() {
             listadoCongelados.appendChild(nuevoCongelado);
             let congeladosOpcion = document.createElement('option');
             congeladosOpcion.textContent = congelados [i];
+            congeladosOpcion.value = congelados [i];
             formularioCongelados.appendChild(congeladosOpcion);
         }
     }
@@ -67,6 +72,7 @@ function imprimirValores() {
             listadoDulces.appendChild(nuevoDulce);
             let dulcesOpcion = document.createElement('option');
             dulcesOpcion.textContent = dulces [i];
+            dulcesOpcion.value = dulces [i];
             formularioDulces.appendChild(dulcesOpcion);
         }
     }
@@ -103,6 +109,13 @@ function valorCategoria() {
     let valorRetornado = opcion.value;
     console.log(`la categoría es ${valorRetornado}`)
     return valorRetornado
+}
+function limpiarCajas() {
+    let cajaAlimento = document.querySelector('#informacionAlimento__input');
+    cajaAlimento.value = "";
+    let cajaOpcion = document.getElementById('informacionAlimento__seleccion');
+    cajaOpcion.value = "";
+    return;
 }
 function guardarAlimento() {
     let alimento = document.querySelector('#informacionAlimento__input');
@@ -144,6 +157,7 @@ function mensajeGuardado(texto) {
     mensajeRetornado.innerHTML = texto;
     let dialogo = document.getElementById('mensajeGuardado');
     dialogo.showModal();
+    limpiarCajas();
 }
 function continuar(){
     document.querySelectorAll('dialog').forEach(dialog =>{
@@ -157,9 +171,93 @@ function eliminarForma() {
     document.querySelectorAll('.eliminar__forma__boton').forEach(boton=>{
         boton.addEventListener('click', function () {
             eleccionEliminar2 = this.value;
-            // console.log('el valor es'+ eleccionEliminar2);
+            console.log('el valor es'+ eleccionEliminar2);
+            let forma = document.getElementById('eliminar_categoria');
+            if (eleccionEliminar2 === 'Sí') {
+                console.log('sí');
+                forma.classList.remove('hidden');
+                return;
+            } else if (eleccionEliminar2 === 'No') {
+                if (forma.classList.contains('hidden')) {
+                    return;
+                } else{
+                    forma.classList.add('hidden');
+                }
+            }
         })
     })
 }
+function categoriaElimina() {
+    let valorEliminar = document.getElementById('forma_categoria').value;
+    // console.log(valorEliminar);
+    document.querySelectorAll('.eliminar__forma__boton').forEach(boton=>{
+        boton.setAttribute('disabled','true');
+    })
+    if (valorEliminar === "") {
+        alert('Seleccione categoria');
+    }else{
+        switch (valorEliminar) {
+            case 'frutas':
+                console.log('frutas');
+                document.getElementById('eliminar_fruta').classList.remove('hidden');
+                break;
+            case 'lacteos':
+                console.log('elegiste lácteos');
+                document.getElementById('eliminar_lacteo').classList.remove('hidden');
+                break;
+            case 'congelados':
+                console.log('congelados');
+                document.getElementById('eliminar_congelado').classList.remove('hidden');
+                break;
+            case 'dulces':
+                console.log('elegiste dulces');
+                document.getElementById('eliminar_dulce').classList.remove('hidden');
+                break;
 
-// eliminarForma();
+        }
+    }
+}
+function frutaElegida() {
+    let selectFruta = document.querySelector('#Lista_frutas');
+    let frutaEliminar = selectFruta.value;
+    console.log(`elegiste la fruta ${frutaEliminar}`);
+    frutas = frutas.filter(fruta => fruta !==frutaEliminar);
+    alert(`Se elimina ${frutaEliminar} de la categoría de Frutas`);
+    actualizarListas('listado_frutas','Lista_frutas');
+}
+function lacteoElegido() {
+    let selectLacteo = document.querySelector('#Lista_lacteos');
+    let lacteoEliminar = selectLacteo.value;
+    console.log(`elegiste  ${lacteoEliminar}`);
+    lacteos = lacteos.filter(lacteo => lacteo !==lacteoEliminar);
+    alert(`Se elimina ${lacteoEliminar} de la categoría de Lácteos`);
+    actualizarListas('listado_lacteos','Lista_lacteos');
+}
+function congeladoElegido() {
+    let selectCongelado = document.querySelector('#Lista_congelados');
+    let congeladoEliminar = selectCongelado.value;
+    console.log(`elegiste  ${congeladoEliminar}`);
+    congelados = congelados.filter(congelado => congelado !== congeladoEliminar);
+    alert(`Se elimina ${congeladoEliminar} de la categoría de congelados`);
+    actualizarListas('listado_congelados','Lista_congelados');
+}
+function dulceElegido() {
+    let selectDulce = document.querySelector('#Lista_dulces');
+    let dulceEliminar = selectDulce.value;
+    console.log(`elegiste  ${dulceEliminar}`);
+    dulces = dulces.filter(dulce => dulce !== dulceEliminar);
+    alert(`Se elimina ${dulceEliminar} de la categoría de dulces`);
+    actualizarListas('listado_dulces','Lista_dulces');
+}
+function actualizarListas(IdListado,IdSelect) {
+    let elementoUL = document.getElementById(IdListado);
+    elementoUL.innerHTML = "";
+    let elementoOptions = document.getElementById(IdSelect);
+    elementoOptions.innerHTML = "";
+    let optionBlanco = document.createElement('option');
+    optionBlanco.textContent = "";
+    optionBlanco.value = "";
+    elementoOptions.appendChild(optionBlanco);
+    imprimirValores();
+    return;
+}
