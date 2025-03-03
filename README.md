@@ -1,4 +1,10 @@
-# 🚀 7 Days of Code: Lógica con JavaScript
+<p align="center">
+<img src ="https://github.com/user-attachments/assets/06600e20-0f02-40d0-974d-6db9fb269715">
+</p>
+<h1 align="center">🚀 7 Days of Code: Lógica con JavaScript</h1>
+<p align="center">
+   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+</p>
 
 ¡Bienvenido a mi desafío de **7 Days of Code**! 🎯 Durante una semana, abordé ejercicios prácticos diseñados para reforzar mis habilidades en **JavaScript**, explorando estructuras de control, funciones y manipulación de datos. 
 
