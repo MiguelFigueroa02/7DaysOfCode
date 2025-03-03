@@ -1,1 +1,86 @@
 /*Principal*/
+/* Fuente de número siete */
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+/* Fuente de título */
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Fuente cuerpo */
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+body{
+    /* display: flex;
+    flex-direction: column; */
+    height: 100vh;
+    background-color: #2D9DA7;
+    color: #F5CA9E;
+    font-family: "Roboto Flex", sans-serif;
+    font-style: normal;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.2;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10vb 20vb;
+}
+.proyecto, .redes{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#proyecto__titulo__siete{
+    font-family: "Sarpanch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+}
+.proyecto__titulo{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family: "Sarpanch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3em;
+    line-height: 1.2em;
+}
+.proyecto__subtitulo{
+    font-size: 1.4em;
+    margin-bottom: 0;
+}
+.proyecto__descripcion, .redes__descripcion{
+    text-align: justify;
+    width: 82%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.dias{
+    margin: 2%;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.dias__enlace, .dias__enlace:visited, .redes__enlace, .redes__enlace:visited{
+    text-decoration: none;
+    color: #F5CA9E;
+    /* margin-right: 40px; */
+    border: solid  #F5CA9E 1.5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.dias__enlace:hover, .redes__enlace:hover{
+    transition: background-color 0.5s ease;
+    background-color: #F5CA9E;
+    color: #2D9DA7;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: padding 0.3s ease;
+}
+.redes__botones{
+    margin-top: 3%;
+    display: flex;
+    gap: 2em;
+}
