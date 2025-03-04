@@ -1,0 +1,28 @@
+/* about */
+/*Principal*/
+/* Fuente de número siete */
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+/* Fuente de título */
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Fuente cuerpo */
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+body{
+    /* display: flex;
+    flex-direction: column; */
+    height: 100vh;
+    background-color: #2D9DA7;
+    color: #F5CA9E;
+    font-family: "Roboto Flex", sans-serif;
+    font-style: normal;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.2;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10vb 20vb;
+}
+.pr

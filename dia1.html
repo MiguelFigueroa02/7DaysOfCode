@@ -11,38 +11,59 @@
         <nav class="navegacion">
             <div class="navegacion__enlaces">
                 <a href="./index.html">Inicio</a>
+                <a href="./about.css">Acerca de mí</a>
             </div>
-
+            <div class="navegacion__logo">
+                <h2 class="navegacion__logo__titulo">Día 1</h2>
+            </div>
         </nav>
     </header>
     <main>
+        <section class="aplicacion">
+            <p>En JavaScript, los datos tipo <span>string</span> (cadena de texto) se usan para representar palabras o frases, como "Hola" o "123", mientras que los datos tipo <span>number</span> (número) representan valores numéricos, como 123 o 3.14. Cuando comparamos dos valores usando operadores de igualdad, como <code>==</code> (igualdad flexible) o <code>===</code> (igualdad estricta), obtenemos un <strong>booleano</strong>, que solo puede ser <code>true</code> (verdadero) o <code>false</code> (falso). Por ejemplo, <code>"5" == 5</code> da <code>true</code> porque JavaScript convierte automáticamente el string en número, pero <code>"5" === 5</code> da <code>false</code> porque uno es string y el otro número. Así, dependiendo del operador que se use, la comparación puede dar un resultado positivo (<code>true</code>) o negativo (<code>false</code>).</p>
+    
+            <h2>📌 Pasos para ejecutar la aplicación:</h2>
+            <ol>
+                <li>1️⃣ <strong>Selecciona el primer valor:</strong> Da clic en un botón para asignar un valor a la <strong>variable uno</strong>.</li>
+                <li>2️⃣  <strong>Selecciona el segundo valor:</strong> Da clic en otro botón para asignar un valor a la <strong>variable dos</strong>.</li>
+                <li>3️⃣ <strong>Ejecuta la comparación:</strong> Presiona el botón <strong>"Intentarlo"</strong> para ver el resultado de la comparación.</li>
+            </ol>
+            
+            <p>🔍 Esto te permitirá entender cómo JavaScript maneja las comparaciones entre <strong>números y cadenas de texto</strong> y cómo los operadores <code>==</code> y <code>===</code> pueden generar diferentes resultados. ¡Pruébalo y experimenta con distintos valores! 🚀</p>
+        </section>
         <section class="botones">
-            <h2 class="botones__titulo">Variables tipo String</h2>
-            <ul class="strings">
-                <li class="strings__lista">
-                    <button class="string__lista__boton" onclick="asignarVariable('1');">'1'</button>
-                </li>
-                <li class="strings__lista">
-                    <button class="string__lista__boton" onclick="asignarVariable('10');">'10'</button>
-                </li>
-                <li class="strings__lista">
-                    <button class="string__lista__boton" onclick="asignarVariable('30');">'30'</button>
-                </li>
-            </ul>
-            <h2 class="botones__titulo">Variables tipo Number</h2>
-            <ul class="numbers">
-                <li class="numbers__lista">
-                    <button class="numbers__lista__boton" onclick="asignarVariable(1);">1</button>
-                </li>
-                <li class="numbers__lista">
-                    <button class="numbers__lista__boton" onclick="asignarVariable(10);">10</button>
-                </li>
-                <li class="numbers__lista">
-                    <button class="numbers__lista__boton" onclick="asignarVariable(30);">30</button>
-                </li>
-            </ul>
-            <p id="botones__var_uno"></p>
-            <p id="botones__var_dos"></p>
+            <div class="section__string">
+                <h2 class="botones__titulo">Variables tipo String</h2>
+                <ul class="strings">
+                    <li class="strings__lista">
+                        <button class="string__lista__boton" onclick="asignarVariable('1');">'1'</button>
+                    </li>
+                    <li class="strings__lista">
+                        <button class="string__lista__boton" onclick="asignarVariable('10');">'10'</button>
+                    </li>
+                    <li class="strings__lista">
+                        <button class="string__lista__boton" onclick="asignarVariable('30');">'30'</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="section__numbers">
+                <h2 class="botones__titulo">Variables tipo Number</h2>
+                <ul class="numbers">
+                    <li class="numbers__lista">
+                        <button class="numbers__lista__boton" onclick="asignarVariable(1);">1</button>
+                    </li>
+                    <li class="numbers__lista">
+                        <button class="numbers__lista__boton" onclick="asignarVariable(10);">10</button>
+                    </li>
+                    <li class="numbers__lista">
+                        <button class="numbers__lista__boton" onclick="asignarVariable(30);">30</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="resultados__botones">
+                <p id="botones__var_uno"></p>
+                <p id="botones__var_dos"></p>
+            </div>
         </section>
         <section class="comparar">
             <div class="comparar__seccion">

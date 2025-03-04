@@ -38,7 +38,10 @@ function comparaValor(){
         if (variableUno == variableDos) {
             // console.log(`Las variables ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} tienen el mismo valor, pero tipos diferentes`);
             textoComparacion = `Las variables ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} tienen el mismo valor, pero tipos diferentes`;
-        } else {
+        } else if (typeof(variableUno) === typeof(variableDos)) {
+            textoComparacion = `Las variables ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} tienen diferente valor, pero son del mismo tipo`;
+        }
+        else {
             // console.log(`Las variables ${typeof(variableUno)} ${variableUno} del tipo y ${typeof(variableDos)} ${variableDos} tienen diferentes valor y tipo`);
             textoComparacion = `Las variables ${typeof(variableUno)} ${variableUno} del tipo y ${typeof(variableDos)} ${variableDos} tienen diferentes valor y tipo`;
         }
