@@ -18,9 +18,7 @@
 
 ### 📅 Desglose de los días
 - <details>
-   <summary>
-   **Día 1**: Exploración de los distintos tipos de datos en JavaScript y comprensión de la comparación de valores mediante operadores de igualdad.
-   </summary>
+   <summary><b>Día 1</b>: Exploración de los distintos tipos de datos en JavaScript y comprensión de la comparación de valores mediante operadores de igualdad.</summary>
    </details>
 - **Día 2**: Almacenamiento y manipulación de datos utilizando variables, comprendiendo su alcance y uso.
 - **Día 3**: Implementación de estructuras condicionales (`if` / `else`) y ciclos (`for`, `while`) para controlar el flujo de ejecución.
