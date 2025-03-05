@@ -5,24 +5,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /* Fuente cuerpo */
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+:root{
+    --color-fondo:#2D9DA7;
+    --color-fuentes-bordes: #F5CA9E;
+    --fuentes-cuerpo: "Roboto Flex", sans-serif;
+}
+html{
+    margin: 0;
+    padding: 0;
+}
 body{
     /* display: flex;
     flex-direction: column; */
     height: 100vh;
-    background-color: #2D9DA7;
-    color: #F5CA9E;
-    font-family: "Roboto Flex", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-fuentes-bordes);
+    font-family: var(--fuentes-cuerpo);
     font-style: normal;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.0rem;
     line-height: 1.2;
+    box-sizing: border-box;
 }
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10vb 20vb;
+    margin: 0 5%;
 }
 .proyecto, .redes{
     margin: 0;
@@ -35,9 +45,11 @@ main{
     font-family: "Sarpanch", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 3em;
+    font-size: 8rem;
+    margin-right: 1.5%;
 }
 .proyecto__titulo{
+    width: 100%;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -65,16 +77,16 @@ main{
 }
 .dias__enlace, .dias__enlace:visited, .redes__enlace, .redes__enlace:visited{
     text-decoration: none;
-    color: #F5CA9E;
+    color: var(--color-fuentes-bordes);
     /* margin-right: 40px; */
     border: solid  #F5CA9E 1.5px;
     padding: 10px 15px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 .dias__enlace:hover, .redes__enlace:hover{
     transition: background-color 0.5s ease;
     background-color: #F5CA9E;
-    color: #2D9DA7;
+    color: var(--color-fondo);
     padding: 10px 20px;
     border-radius: 15px;
     transition: padding 0.3s ease;
@@ -83,4 +95,20 @@ main{
     margin-top: 3%;
     display: flex;
     gap: 2em;
+}
+@media (max-width: 800px){
+    main{
+        margin: 0;
+        width: auto;
+    }
+    .dias{
+        gap: 2%;
+        flex-wrap: wrap;
+    }
+    .dias__enlace{
+        margin-top: 3%;
+    }
+    .proyecto__descripcion, .redes__descripcion, .proyecto__subtitulo{
+        width: 90%;
+    }
 }

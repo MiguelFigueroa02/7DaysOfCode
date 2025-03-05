@@ -6,13 +6,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /* Fuente cuerpo */
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+:root{
+    --color-fondo:#FCECC9;
+    --color-letras:#445E93;
+    --fuente-cuerpo: "Roboto Flex", sans-serif;
+}
 body{
     /* display: flex;
     flex-direction: column; */
     height: 100vh;
-    background-color: #2D9DA7;
-    color: #F5CA9E;
-    font-family: "Roboto Flex", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-letras);
+    font-family: var(--fuente-cuerpo);
     font-style: normal;
     text-align: center;
     font-size: 1em;
@@ -25,4 +30,11 @@ main{
     align-items: center;
     margin: 10vb 20vb;
 }
-.pr
+.redes__enlace, .redes__enlace:visited{
+    text-decoration: none;
+    color: var(--color-letras);
+    /* margin-right: 40px; */
+    border: solid  var(--color-letras) 1.5px;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
