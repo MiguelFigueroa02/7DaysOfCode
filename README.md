@@ -18,14 +18,23 @@
 
 ### 📅 Desglose de los días
 - <details>
-   <summary><b>Día 1</b>: Exploración de los distintos tipos de datos en JavaScript y comprensión de la comparación de valores mediante operadores de igualdad.</summary>
+   <summary><b>Día 1:</b> Exploración de los distintos tipos de datos en JavaScript y comprensión de la comparación de valores mediante operadores de igualdad.</summary>
    </details>
-- **Día 2**: Almacenamiento y manipulación de datos utilizando variables, comprendiendo su alcance y uso.
-- **Día 3**: Implementación de estructuras condicionales (`if` / `else`) y ciclos (`for`, `while`) para controlar el flujo de ejecución.
-- **Día 4**: Desarrollo de un juego de número secreto aplicando estructuras de repetición y lógica condicional.
-- **Días 5 y 6**: Creación y modificación de arreglos para gestionar y transformar conjuntos de datos dinámicamente.
-- **Día 7**: Construcción de funciones reutilizables para implementar una calculadora básica.
-
+- <details>
+   <summary><b>Día 2:</b> Almacenamiento y manipulación de datos utilizando variables, comprendiendo su alcance y uso.</summary>
+   </details>
+- <details>
+   <summary><b>Día 3:</b> Implementación de estructuras condicionales (`if` / `else`) y ciclos (`for`, `while`) para controlar el flujo de ejecución.</summary>
+   </details>
+- <details>
+   <summary><b>Día 4:</b> Desarrollo de un juego de número secreto aplicando estructuras de repetición y lógica condicional.</summary>
+   </details>
+- <details>
+   <summary><b>Días 5 y 6:</b> Creación y modificación de arreglos para gestionar y transformar conjuntos de datos dinámicamente.</summary>
+   </details>
+- <details>
+   <summary><b>Día 7:</b> Construcción de funciones reutilizables para implementar una calculadora básica.</summary>
+   </details>
 ## 🛠️ Tecnologías utilizadas
 - Lenguajes de programación HTML, CSS y JavaScript
 - Visual Studio Code
