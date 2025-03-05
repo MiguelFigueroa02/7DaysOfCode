@@ -17,7 +17,11 @@
 - 📂 **Día 1-7**: Cada carpeta contiene los ejercicios y soluciones correspondientes a cada día. Siéntete libre de navegar en la estructura de las carpetas para que conozcas la estructura del proyecto
 
 ### 📅 Desglose de los días
-- **Día 1**: Exploración de los distintos tipos de datos en JavaScript y comprensión de la comparación de valores mediante operadores de igualdad.
+- <details>
+   <summary>
+   **Día 1**: Exploración de los distintos tipos de datos en JavaScript y comprensión de la comparación de valores mediante operadores de igualdad.
+   </summary>
+   </details>
 - **Día 2**: Almacenamiento y manipulación de datos utilizando variables, comprendiendo su alcance y uso.
 - **Día 3**: Implementación de estructuras condicionales (`if` / `else`) y ciclos (`for`, `while`) para controlar el flujo de ejecución.
 - **Día 4**: Desarrollo de un juego de número secreto aplicando estructuras de repetición y lógica condicional.
