@@ -9,10 +9,17 @@ function asignarVariable(valor) {
     if (!variableUno) {
         variableUno = valor;
         imprimirResult(variableUno,selectorMensajeUno);
+        document.getElementById('botones__var_uno').classList.add('animacion__texto');
         imprimirTexto(selectorComparacion,'');
+        let animacionResultado = document.getElementById('comparar__seccion_resultado');
+        if (animacionResultado.classList.contains('animacion__texto')) {
+            animacionResultado.classList.remove('animacion__texto');
+        }
+        // document.getElementById('comparar__seccion_resultado').classList.remove('animacion__texto');
     } else if (!variableDos){
         variableDos = valor;
         imprimirResult(variableDos,selectorMensajeDos);
+        document.getElementById('botones__var_dos').classList.add('animacion__texto');
     }
 }
 function imprimirResult(variable,selector) {
@@ -30,6 +37,7 @@ function imprimirResult(variable,selector) {
     }
 }
 function comparaValor(){
+    // document.getElementById('comparar__seccion_resultado').classList.remove('animacion__texto');
     let textoComparacion;
     if (variableUno === variableDos) {
         // console.log(`La variable ${typeof(variableUno)} ${variableUno} y ${typeof(variableDos)} ${variableDos} son del mismo valor y del mismo tipo`);
@@ -47,6 +55,7 @@ function comparaValor(){
         }
     }
     imprimirTexto(selectorComparacion,textoComparacion);
+    document.getElementById('comparar__seccion_resultado').classList.add('animacion__texto');
     imprimirTexto(selectorMensajeUno,'');
     imprimirTexto(selectorMensajeDos,'');
     reinicio();
@@ -60,11 +69,16 @@ function reinicio() {
         botton.removeAttribute('disabled');
     });
     document.getElementById('comparar__seccion__Valor').setAttribute('disabled','true');
+    document.getElementById('botones__var_uno').classList.remove('animacion__texto');
+    document.getElementById('botones__var_dos').classList.remove('animacion__texto');
+    // document.getElementById('comparar__seccion_resultado').classList.remove('animacion__texto');
+
     variableUno = undefined;
     variableDos = undefined;
 }
 function imprimirTexto(etiqueta,texto){
     let elemento = document.querySelector(etiqueta);
     elemento.innerHTML =texto;
+    // elemento.classList.add('animacion__texto');
     return;
 }

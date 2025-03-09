@@ -34,7 +34,7 @@ main{
     text-decoration: none;
     color: var(--color-letras);
     /* margin-right: 40px; */
-    border: solid  var(--color-letras) 1.5px;
+    border: solid  var(--color-letras)   1.5px;
     padding: 10px 15px;
     border-radius: 15px;
 }

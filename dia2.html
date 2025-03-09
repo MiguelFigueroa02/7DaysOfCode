@@ -5,15 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./day2/script.js"></script>
     <link rel="stylesheet" href="./day2/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Día 2</title>
 </head>
 <body>
     <header>
         <nav class="navegacion">
-            <a href="./index.html">Inicio</a>
+            <div class="navegacion__enlaces">
+                <a href="./index.html">Inicio</a>
+                <a href="./about.css">Acerca de mí</a>
+            </div>
+            <div class="navegacion__logo">
+                <h2 class="navegacion__logo__titulo">Día 2</h2>
+            </div>
         </nav>
     </header>
     <main>
+        <section class="aplicacion">
+            <p>En JavaScript, las variables se utilizan para almacenar valores que pueden cambiar a lo largo de la ejecución de un programa. Se pueden declarar utilizando <code>var</code>, <code>let</code> o <code>const</code>, dependiendo de la necesidad de modificación de los valores almacenados.</p>
+    
+            <h2>📌 Pasos para ejecutar la aplicación:</h2>
+            <p>Esta es una pequeña aplicación en la que los valores ingresados por el usuario se asignan a variables, permitiendo la interacción con el programa.</p>
+            <ul>
+                <li>1️⃣ Ingresa tu nombre, edad y el lenguaje de programación que estás aprendiendo. Luego, haz clic en enviar.</li>
+                <li>2️⃣ Selecciona la opción correcta indicando si te gusta lo que estás aprendiendo.</li>
+                <li>3️⃣ Observa el mensaje generado por el programa.</li>
+                <li>4️⃣ Intenta cuantas veces quieras para visualizar diferentes mensajes del programa.</li>
+            </ul>
+            
+            <p>🔍 Esto te permitirá entender cómo JavaScript maneja las comparaciones entre <strong>números y cadenas de texto</strong> y cómo los operadores <code>==</code> y <code>===</code> pueden generar diferentes resultados. ¡Pruébalo y experimenta con distintos valores! 🚀</p>
+
+            <p>Consulta la lógica de ejecución en javascript en el siguiente enlace:</p>
+            <a href="https://github.com/MiguelFigueroa02/7DaysOfCode/blob/main/day2/script.js">Explora el código en GitHub <i class="fa-solid fa-code"></i></a>
+        </section>
         <section class="cuestionario">
             <label class="cuestionario__pregunta">¿Cuál es tu nombre?</label>
             <input type="text" name="nombre" id="cuestionario__nombre" placeholder="Nombre">
