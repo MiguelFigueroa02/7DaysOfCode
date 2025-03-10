@@ -11,12 +11,12 @@
 <body>
     <header>
         <nav class="navegacion">
-            <div class="navegacion__enlaces">
-                <a href="./index.html">Inicio</a>
-                <a href="./about.css">Acerca de mí</a>
-            </div>
             <div class="navegacion__logo">
                 <h2 class="navegacion__logo__titulo">Día 2</h2>
+            </div>
+            <div class="navegacion__enlaces">
+                <a href="./index.html" class="navegacion__enlaces_a">Inicio</a>
+                <a href="./about.css" class="navegacion__enlaces_a">Acerca de mí</a>
             </div>
         </nav>
     </header>
@@ -33,10 +33,7 @@
                 <li>4️⃣ Intenta cuantas veces quieras para visualizar diferentes mensajes del programa.</li>
             </ul>
             
-            <p>🔍 Esto te permitirá entender cómo JavaScript maneja las comparaciones entre <strong>números y cadenas de texto</strong> y cómo los operadores <code>==</code> y <code>===</code> pueden generar diferentes resultados. ¡Pruébalo y experimenta con distintos valores! 🚀</p>
-
-            <p>Consulta la lógica de ejecución en javascript en el siguiente enlace:</p>
-            <a href="https://github.com/MiguelFigueroa02/7DaysOfCode/blob/main/day2/script.js">Explora el código en GitHub <i class="fa-solid fa-code"></i></a>
+            
         </section>
         <section class="cuestionario">
             <label class="cuestionario__pregunta">¿Cuál es tu nombre?</label>
@@ -56,11 +53,28 @@
                 <option value="No">No</option>
             </select>
             <button id="optional__boton" onclick="optional();" disabled>Enviar</button>
-            <p class="optional__mensaje"></p>
+            <p class="optional__mensaje">
+                <!--Añadir animación por medio de la clase-->
+            </p>
+        </section>
+        <section class="aplicacion">
+            <p>🔍 Esto te permitirá entender cómo JavaScript maneja las comparaciones entre <strong>números y cadenas de texto</strong> y cómo los operadores <code>==</code> y <code>===</code> pueden generar diferentes resultados. ¡Pruébalo y experimenta con distintos valores! 🚀</p>
+
+            <p>Consulta la lógica de ejecución en javascript en el siguiente enlace:</p>
+            <div class="repositorio_caja">
+                <a href="https://github.com/MiguelFigueroa02/7DaysOfCode/blob/main/day2/script.js" id="enlace_respositorio">Explora el código en GitHub <i class="fa-solid fa-code"></i></a>
+            </div>
+            
         </section>
     </main>
-    <footer>
-        
+    <footer class="pie">
+        <div class="pie__redes">
+            <p class="pie__redes__description">Te invito a contatar en mis redes: </p>
+            <div class="pies__redes_caja_enlaces">
+                <a href="https://www.linkedin.com/in/miguelims" class="pie__redes__enlace"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/MiguelFigueroa02" class="pie__redes__enlace"><i class="fa-brands fa-github"></i></a>
+            </div>
+
     </footer>
 </body>
 </html>
