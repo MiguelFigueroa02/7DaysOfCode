@@ -113,46 +113,7 @@ header{
     align-items: center;
     gap: 10%;
 }
-@media (max-width: 400px){
-    .navegacion__logo{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .navegacion__logo__titulo{
-        margin-bottom: 2%;
-    }
-    .navegacion{
-        flex-direction: column;
-    }
-    .navegacion__enlaces{
-        justify-content: space-between;
-        padding: 0% 5%;
-        width: 90%;
-    }
-    .botones__contenido{
-        flex-direction: column;
-    }
-    .pie__redes{
-        flex-direction: column;
-        width: 100%;
-    }
-    .pies__redes_caja_enlaces{
-        width: 100%;
-        justify-content: space-between;
-        gap: 5%
-    }
-    .cuestionario{
-        width: 80%;
-    }
-    .cuestionario__pregunta, .cuestionario__cuadro{
-        width: 80%;
-    }
-    #cuestionario__nombre, #cuestionario__edad, #cuestionario__lenguaje{
-        width: 80%;
-        padding-left: 0;
-    }
-}
+
 .navegacion__enlaces_a, .navegacion__enlaces_a:visited{
     text-decoration: none;
     font-family: var(--fuente-enlaces);
@@ -355,4 +316,49 @@ footer{
     border: none;
     background-color: var(--color-fuentes-bordes);
     color: var(--color-boton-fuente);
+}
+@media (max-width: 400px){
+    .navegacion__logo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .navegacion__logo__titulo{
+        margin-bottom: 2%;
+    }
+    .navegacion{
+        flex-direction: column;
+    }
+    .navegacion__enlaces{
+        justify-content: space-between;
+        padding: 0% 5%;
+        width: 90%;
+    }
+    .botones__contenido{
+        flex-direction: column;
+    }
+    .pie__redes{
+        flex-direction: column;
+        width: 100%;
+    }
+    .pies__redes_caja_enlaces{
+        width: 30%; 
+        justify-content: center;
+        /* justify-content: space-between; */
+        gap: 15%;
+        margin-bottom: 5%;
+    }
+    .cuestionario{
+        width: 80%;
+    }
+    .cuestionario__pregunta{
+        width: 100%;
+    }
+    .cuestionario__cuadro{
+        width: 80%;
+    }
+    #cuestionario__nombre, #cuestionario__edad, #cuestionario__lenguaje{
+        width: 100%;
+        padding-left: 0 2%;
+    }
 }
