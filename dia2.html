@@ -36,26 +36,35 @@
             
         </section>
         <section class="cuestionario">
-            <label class="cuestionario__pregunta">¿Cuál es tu nombre?</label>
-            <input type="text" name="nombre" id="cuestionario__nombre" placeholder="Nombre">
-            <label class="cuestionario__pregunta">¿Cuál es tu edad?</label>
-            <input type="number" name="edad" id="cuestionario__edad" placeholder="Edad">
-            <label class="cuestionario__pregunta">¿Qué lenguaje de programación estás estudiando?</label>
-            <input type="text" name="lenguaje" id="cuestionario__lenguaje" placeholder="Lenguaje">
+            <div class="cuestionario__cuadro">
+                <label class="cuestionario__pregunta">¿Cuál es tu nombre?</label>
+                <input type="text" name="nombre" id="cuestionario__nombre" placeholder="Nombre">
+            </div>
+            <div class="cuestionario__cuadro">
+                <label class="cuestionario__pregunta">¿Cuál es tu edad?</label>
+                <input type="number" name="edad" id="cuestionario__edad" placeholder="Edad">
+            </div>
+            <div class="cuestionario__cuadro">
+                <label class="cuestionario__pregunta">¿Qué lenguaje de programación estás estudiando?</label>
+                <input type="text" name="lenguaje" id="cuestionario__lenguaje" placeholder="Lenguaje">
+            </div>
             <button type="submit" onclick="cuestionario();">Enviar</button>
-            <p class="cuestionario__mensaje" ></p>
+            
+            <div class="optional escondido" id="formularioOpcional">
+                <div class="optional__content">
+                    <label for="gusto" id="optional__label"></label>
+                    <select name="Opciones" id="optional__select">
+                        <option value=""></option>
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <button id="optional__boton" onclick="optional();" disabled>Enviar</button>
+            </div>
         </section>
-        <section class="optional escondido" id="formularioOpcional">
-            <label for="gusto" id="optional__label"></label>
-            <select name="Opciones" id="optional__select">
-                <option value=""></option>
-                <option value="Sí">Sí</option>
-                <option value="No">No</option>
-            </select>
-            <button id="optional__boton" onclick="optional();" disabled>Enviar</button>
-            <p class="optional__mensaje">
-                <!--Añadir animación por medio de la clase-->
-            </p>
+        <section class="mensaje_devuelto">
+            <p class="cuestionario__mensaje"></p>
+            <p class="optional__mensaje"></p>
         </section>
         <section class="aplicacion">
             <p>🔍 Esto te permitirá entender cómo JavaScript maneja las comparaciones entre <strong>números y cadenas de texto</strong> y cómo los operadores <code>==</code> y <code>===</code> pueden generar diferentes resultados. ¡Pruébalo y experimenta con distintos valores! 🚀</p>

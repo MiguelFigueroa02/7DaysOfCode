@@ -50,6 +50,11 @@ function optional() {
     imprimirTexto(resultadoMensaje,mensajeSelector);
 }
 function imprimirTexto(texto,seletor) {
+    let mensajeVisualizado = "🤖:"
+    mensajeVisualizado = mensajeVisualizado + texto;
     let parrafo = document.querySelector(seletor);
-    parrafo.innerHTML = texto;
+    parrafo.innerHTML = mensajeVisualizado;
+    parrafo.classList.remove('animacion__texto');
+    void parrafo.offsetWidth;
+    parrafo.classList.add('animacion__texto');
 }
