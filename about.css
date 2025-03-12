@@ -75,6 +75,11 @@ main{
 .imagen__contenido:hover{
     scale: 1.2;
 }
+.presentacion__contenido__titulo{
+    margin: 0;
+    font-size: 5rem;
+    font-weight: 600;
+}
 .redes__enlace, .redes__enlace:visited{
     text-decoration: none;
     color: var(--color-letras);
