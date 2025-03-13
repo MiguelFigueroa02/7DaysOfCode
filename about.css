@@ -146,16 +146,47 @@ main{
     position: absolute;
     white-space: nowrap;
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(-80%);
-    transition: transform 0.8s ease, opacity 1.5s ease-in, visibility 1.5s ease-in;
+    /* visibility: hidden; */
+    /* transform: translateY(-80%); */
+    /* transition: transform 0.8s ease, opacity 1.5s ease-in, visibility 1.5s ease-in; */
+    animation: showGuelito 20s ease infinite;
 }
-.presentacion__contenido__titulo:hover::after{
-    /* content: "guelito"; */
+/* .presentacion__contenido__titulo:hover::after{
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    /* transition: all 0.6s ease; */
+} */
+@keyframes showGuelito {
+    0%{
+        opacity:0;
+        transform: translateY(-80%);
+    }
+    30%{
+        opacity:0;
+        transform: translateY(-80%);
+    }
+    33%{
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    35%{
+        opacity: 1;
+    }
+    67%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    68%{
+        transform: translateY(-40%);
+        opacity: 0.4;
+    }
+    70%{
+        transform: translateY(-80%);
+        opacity: 0.15;
+    }
+    75%{
+        opacity: 0;
+    }
 }
 .redes__botones{
     width: 100%;
