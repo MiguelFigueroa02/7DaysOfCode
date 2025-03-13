@@ -3,7 +3,7 @@
 /* Fuente de número siete */
 @import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
 /* Fuente de título */
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 /* Fuente cuerpo */
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
 :root{
@@ -15,6 +15,10 @@
     --color-gradiente-3: #e4e3e4;
     --color-gradiente-4: #f7ddbb;
     --color-gradiente-5: #efcab2;
+    --color-background-git: #2b3137;
+    --color-background-git-2: #fafbfc;
+    --color-background-link: #007bb5;
+    --fuente-titulo: "Teko", sans-serif;
 }
 body{
     /* display: flex;
@@ -34,13 +38,18 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: show 1s ease;
 }
-/* @media (max-width: 700px) {
-    body{
-        background-size: 100% 200%;
+@keyframes show {
+    from{
+        opacity: 0;
     }
-} */
+    to{
+        opacity: 1;
+    }
+}
 main{
+    /* margin-top: 5%; */
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -53,6 +62,56 @@ main{
     main{
         flex-direction: column;
     }
+    .imagen{
+        margin-bottom: 5%;
+    }
+}
+.header__menu{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+.header__menu__link, .header__menu__link:visited{
+    font-family: var(--fuente-titulo) ;
+    padding-top: 5%;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--color-letras);
+    position: relative;
+    scale: 1;
+    opacity: 0.8;
+}
+.header__menu__link:hover{
+    scale: 1.1;
+    text-shadow: 0 0 1rem var(--color-background-git-2);
+    opacity: 1;
+}
+.header__menu__link::before, .header__menu__link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background: var(--color-letras);
+    opacity: 0;
+    /* visibility: hidden; */
+    /* top: 0;
+    transform: translateY(1.2rem); */
+    /* opacity: 0; */
+    transition: all 0.5s ease;
+}
+.header__menu__link::before{
+    top: 0;
+    transform: translateY(1.2rem);
+}
+.header__menu__link::after{
+    bottom: 0;
+    transform: translateY(-1.2rem);
+}
+.header__menu__link:hover::before, .header__menu__link:hover::after{
+    transform: translateY(0);
+    opacity: 1;
+    /* visibility: visible; */
 }
 .presentacion__contenido{
     width: 80%;
@@ -76,15 +135,85 @@ main{
     scale: 1.2;
 }
 .presentacion__contenido__titulo{
+    /* margin-top: 10%; */
     margin: 0;
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 600;
+    position: relative;
 }
-.redes__enlace, .redes__enlace:visited{
+.presentacion__contenido__titulo::after{
+    content:"guelito";
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-80%);
+    transition: transform 0.8s ease, opacity 1.5s ease-in, visibility 1.5s ease-in;
+}
+.presentacion__contenido__titulo:hover::after{
+    /* content: "guelito"; */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* transition: all 0.6s ease; */
+}
+.redes__botones{
+    width: 100%;
+    display: flex;
+    gap:5%;
+}
+
+#redes__Link, #redes__Link:visited, #redes__Git, #redes__Git:visited{
     text-decoration: none;
     color: var(--color-letras);
     /* margin-right: 40px; */
     border: solid  var(--color-letras)   1.5px;
-    padding: 10px 15px;
-    border-radius: 15px;
+    padding: 0.5rem 0.8rem;
+    border-radius: 1rem;
+    scale: 1;
+    transition: all 0.3s ease-in-out;
+}
+#redes__Git span, #redes__Link span{
+    font-size: 1.4rem;
+}
+#redes__Git:hover, #redes__Link:hover{
+    /* scale: 1.2; */
+    animation: pulso 1.5s ease-in-out infinite;
+    border: none;
+    color: var(--color-background-git-2);
+    box-shadow: 0 0 0.5rem var(--color-letras);
+}
+#redes__Git:hover{
+    background-color: var(--color-background-git) ;
+}
+#redes__Link:hover{
+    background-color: var(--color-background-link);
+}
+@keyframes pulso {
+    25%{
+        transform: scale(0.9);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+}
+@media (max-width: 800px) {
+    .redes__botones{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap:20%
+    }
+    #redes__Link, #redes__Link:visited, #redes__Git, #redes__Git:visited{
+        margin-bottom: 5%;
+    }
+    .imagen{
+        width: 100%;
+        height: 40vh;
+        /* bor */
+    }
+    .imagen__contenido{
+        height: 100%;
+        width: auto;
+    }
 }
