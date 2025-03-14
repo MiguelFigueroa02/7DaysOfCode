@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./day3/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./day3/script.js"></script>
     <title>Día 3</title>
 </head>
 <body>
-    <a href="./index.html">Volver</a>
+    <header>
+        <nav class="navegacion">
+            <div class="navegacion__logo">
+                <h2 class="navegacion__logo__titulo">Día 3</h2>
+            </div>
+            <div class="navegacion__enlaces">
+                <a href="./index.html" class="navegacion__enlaces_a">Inicio</a>
+                <a href="./about.html" class="navegacion__enlaces_a">Acerca de mí</a>
+            </div>
+        </nav>
+    </header>
     <main>
+        <section class="aplicacion">
+            <p>Hoy me puse manos a la obra con una de las bases más importantes de la programación en JavaScript: las estructuras condicionales y los ciclos. Creé un pequeño sistema de control que revisa si la información de las tecnologías que te gustaría aprender y, en base a tus respuestas, te devuelve un resumen de datos que le ingreses. Usé if y else para decidir el flujo por el cual te va guiando la aplicación, y un while para mantener un control de la cantidad de datos ingresoados. ¡Te invito a probarlo para ver los resutados!</p>
+    
+            <h2>📌 Pasos para ejecutar la aplicación:</h2>
+            <p></p>
+            <ul>
+                <li>1️⃣ Da click en el botón</li>
+                <li>2️⃣ Indica si quieres seguir especializándote 😁</li>
+                <li>3️⃣ Define el camino que te gustaría seguir y las tecnologías que te gustarían aprender</li>
+                <li>4️⃣ Visualiza el mensaje final con el resumen del camino que decidiste tomar</li>
+            </ul>
+            
+            
+        </section>
+        <section class="aplicacion">
         <button onclick="mostrarDialogo()" id="probar">Pruébalo</button>
         <dialog id="pregunta">
             <form id="pregunta__form" method="dialog">
@@ -52,6 +78,24 @@
         <div class="mensajeFinal">
             <p id="mensajefinal"></p>
         </div>
+        </section>
+        <section class="aplicacion">
+            <p>¡Pruébalo y experimenta con distintos valores! 🚀</p>
+
+            <p>Consulta la lógica de ejecución en javascript en el siguiente enlace:</p>
+            <div class="repositorio_caja">
+                <a href="https://github.com/MiguelFigueroa02/7DaysOfCode/blob/main/day3/script.js" id="enlace_respositorio">Explora el código en GitHub <i class="fa-solid fa-code"></i></a>
+            </div>   
+        </section>
     </main>
+    <footer class="pie">
+        <div class="pie__redes">
+            <p class="pie__redes__description">¿Tienes alguna sugerencia de cómo podemos mejorar la aplicación? Siéntete libre de hacérmelo saber en mis redes: </p>
+            <div class="pies__redes_caja_enlaces">
+                <a href="https://www.linkedin.com/in/miguelims" class="pie__redes__enlace"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/MiguelFigueroa02" class="pie__redes__enlace"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+    </footer>
 </body>
 </html>
