@@ -5,49 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./day4/day4.js"></script>
     <link rel="stylesheet" href="./day4/day4.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Día 4</title>
 </head>
 <body>
-    <main class="principal">
-        <div class="resultado">
-            <button class="resultado__iniciar" onclick="numeroAzar();">¡Vamos a intentarlo!</button>
-            <p class="resultado__parrafo"></p>
-        </div>
-        <div class="eleccionJuego hidden" id="contenedorBotonesJuego">
-            <h2 class="eleccionJuego__titulo">¡Adivina el número secreto!</h2>
-            <button class="eleccion_juego" onclick="iniciarJuego();">inténtalo con un ciclo For!</button>
-            <button class="eleccion_juego" onclick="cicloWhile();">inténtalo con un ciclo while!</button>
-        </div>
-        <div class="juego hidden" id="botones_Ciclo_While">
-            <div class="juego__dialogo__forma">
-                <!-- <button type="button" class="juego__boton" id="cero" onclick="eleccionUsuario(0,'cero');">0</button>
-                <button type="button" class="juego__boton" id="uno" onclick="eleccionUsuario(1,'uno');">1</button>
-                <button type="button" class="juego__boton" id="dos" onclick="eleccionUsuario(2,'dos');">2</button>
-                <button type="button" class="juego__boton" id="tres" onclick="eleccionUsuario(3,'tres');">3</button>
-                <button type="button" class="juego__boton" id="cuatro" onclick="eleccionUsuario(4,'cuatro');">4</button>
-                <button type="button" class="juego__boton" id="cinco" onclick="eleccionUsuario(5,'cinco');">5</button>
-                <button type="button" class="juego__boton" id="seis" onclick="eleccionUsuario(6,'seis');">6</button>
-                <button type="button" class="juego__boton" id="siete" onclick="eleccionUsuario(7,'siete');">7</button>
-                <button type="button" class="juego__boton" id="ocho" onclick="eleccionUsuario(8,'ocho');">8</button>
-                <button type="button" class="juego__boton" id="nueve"onclick="eleccionUsuario(9,'nueve');">9</button>
-                <button type="button" class="juego__boton" id="diez" onclick="eleccionUsuario(10,'diez');">10</button> -->
-                <button class="juego_boton" value="0" disabled>0</button>
-                <button class="juego_boton" value="1" disabled>1</button>
-                <button class="juego_boton" value="2" disabled>2</button>
-                <button  class="juego_boton" value="3" disabled>3</button>
-                <button  class="juego_boton" value="4" disabled>4</button>
-                <button  class="juego_boton" value="5" disabled>5</button>
-                <button  class="juego_boton" value="6" disabled>6</button>
-                <button  class="juego_boton" value="7" disabled>7</button>
-                <button  class="juego_boton" value="8" disabled>8</button>
-                <button class="juego_boton" value="9" disabled>9</button>
-                <button class="juego_boton" value="10" disabled>10</button>
+    <header>
+        <nav class="navegacion">
+            <div class="navegacion__logo">
+                <h2 class="navegacion__logo__titulo">Día 4</h2>
             </div>
-        </div>
-        <div class="reiniciar">
-            <button type="button" class="reiniciar__button hidden" id="boton__reinicio" onclick="reinicio();">¡Quiero volver a jugar!</button>
-        </div>
-        <a href="./index.html">Volver</a>
+            <div class="navegacion__enlaces">
+                <a href="./index.html" class="navegacion__enlaces_a">Inicio</a>
+                <a href="./about.html" class="navegacion__enlaces_a">Acerca de mí</a>
+            </div>
+        </nav>
+    </header>
+    <main class="principal">
+        <section class="aplicacion">
+            <p></p>
+    
+            <h2>📌 Pasos para ejecutar la aplicación:</h2>
+            <p>¡Día de juego! Hoy me lancé a crear un pequeño juego en el que el usuario debe adivinar un número secreto. Con `while`, el programa sigue pidiendo intentos hasta que el jugador acierte. Además, agregué un `if` para dar pistas, indicando si el número es mayor o menor. No voy a mentir, después de probarlo varias veces, terminé jugando contra mi propia creación. Te invito a probarlo en los dos modos de juego en que lo cargué</p>
+            <ul>
+                <li>1️⃣ Da click en el botón <span>¡Vamos a intentarlo!</span></li>
+                <li>2️⃣ Indica el modo de juego con el que quisieras intentar adivinar el número secreto😁</li>
+                <li>3️⃣ Si elegiste el método mediante el ciclo For, basta con ingresar de manera manual las veces necesarias el número secreto antes de superar los 3 intentos. No te asustes, pero el sistema te irá desplengando ventanas para guiarte durante todo el proceso 🤖👍</li>
+                <li>4️⃣ Si elegiste utilizar botones, basta con seleccionar el botón del número que sospechas que es el número secreto y guiarte con los mensajes que se te desplegarán en la ventana 😊💻</li>
+                <li>5️⃣ Inténtalo tantas veces como quieras e intenta probar ambos modos de adivinar el número secreto 😀</li>
+            </ul>
+            
+        </section>
+        <section class="modos">
+            <div class="resultado">
+                <button class="resultado__iniciar" onclick="numeroAzar();">¡Vamos a intentarlo!</button>
+                <p class="resultado__parrafo"></p>
+            </div>
+            <div class="eleccionJuego hidden" id="contenedorBotonesJuego">
+                <h2 class="eleccionJuego__titulo">¡Adivina el número secreto!</h2>
+                <button class="eleccion_juego" onclick="iniciarJuego();">¡Inténtalo con un ciclo For!</button>
+                <button class="eleccion_juego" onclick="cicloWhile();">¡Inténtalo con un botones!</button>
+            </div>
+            <div class="juego hidden" id="botones_Ciclo_While">
+                <div class="juego__dialogo__forma">
+                    <!-- <button type="button" class="juego__boton" id="cero" onclick="eleccionUsuario(0,'cero');">0</button>
+                    <button type="button" class="juego__boton" id="uno" onclick="eleccionUsuario(1,'uno');">1</button>
+                    <button type="button" class="juego__boton" id="dos" onclick="eleccionUsuario(2,'dos');">2</button>
+                    <button type="button" class="juego__boton" id="tres" onclick="eleccionUsuario(3,'tres');">3</button>
+                    <button type="button" class="juego__boton" id="cuatro" onclick="eleccionUsuario(4,'cuatro');">4</button>
+                    <button type="button" class="juego__boton" id="cinco" onclick="eleccionUsuario(5,'cinco');">5</button>
+                    <button type="button" class="juego__boton" id="seis" onclick="eleccionUsuario(6,'seis');">6</button>
+                    <button type="button" class="juego__boton" id="siete" onclick="eleccionUsuario(7,'siete');">7</button>
+                    <button type="button" class="juego__boton" id="ocho" onclick="eleccionUsuario(8,'ocho');">8</button>
+                    <button type="button" class="juego__boton" id="nueve"onclick="eleccionUsuario(9,'nueve');">9</button>
+                    <button type="button" class="juego__boton" id="diez" onclick="eleccionUsuario(10,'diez');">10</button> -->
+                    <button class="juego_boton" value="0" disabled>0</button>
+                    <button class="juego_boton" value="1" disabled>1</button>
+                    <button class="juego_boton" value="2" disabled>2</button>
+                    <button  class="juego_boton" value="3" disabled>3</button>
+                    <button  class="juego_boton" value="4" disabled>4</button>
+                    <button  class="juego_boton" value="5" disabled>5</button>
+                    <button  class="juego_boton" value="6" disabled>6</button>
+                    <button  class="juego_boton" value="7" disabled>7</button>
+                    <button  class="juego_boton" value="8" disabled>8</button>
+                    <button class="juego_boton" value="9" disabled>9</button>
+                    <button class="juego_boton" value="10" disabled>10</button>
+                </div>
+            </div>
+            <div class="reiniciar">
+                <button type="button" class="reiniciar__button hidden" id="boton__reinicio" onclick="reinicio();">¡Quiero volver a jugar!</button>
+            </div>
+        </section>
+        
+        <section class="aplicacion">
+            <p>¡Pruébalo e intenta retar ambos modos de juego! 🚀</p>
+
+            <p>Consulta la lógica de ejecución en javascript en el siguiente enlace:</p>
+            <div class="repositorio_caja">
+                <a href="https://github.com/MiguelFigueroa02/7DaysOfCode/blob/main/day4/day4.js" id="enlace_respositorio">Explora el código en GitHub <i class="fa-solid fa-code"></i></a>
+            </div>   
+        </section>
     </main>
+
+    <footer class="pie">
+        <div class="pie__redes">
+            <p class="pie__redes__description">Si consideras alguna otra manera en como podemos mejorar la lógica del juego, te invito a contatarme en mis redes sociales: </p>
+            <div class="pies__redes_caja_enlaces">
+                <a href="https://www.linkedin.com/in/miguelims" class="pie__redes__enlace"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/MiguelFigueroa02" class="pie__redes__enlace"><i class="fa-brands fa-github"></i></a>
+            </div>
+    </footer>
 </body>
 </html>
