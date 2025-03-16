@@ -5,115 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./day5y6/day5_y_6.js"></script>
     <link rel="stylesheet" href="./day5y6/day5_y_6.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Días 5 y 6</title>
 </head>
 <body>
+    <header>
+        <nav class="navegacion">
+            <div class="navegacion__logo">
+                <h2 class="navegacion__logo__titulo">Días 5 </h2>
+            </div>
+            <div class="navegacion__enlaces">
+                <a href="./index.html" class="navegacion__enlaces_a">Inicio</a>
+                <a href="./about.html" class="navegacion__enlaces_a">Acerca de mí</a>
+            </div>
+        </nav>
+    </header>
     <main>
-        <div class="iniciar">
-            <button type="button" class="iniciar__boton" onclick="cuadroDeDialogo();">¡Vamos a intentarlo!</button>
-        </div>
-        <div class="eliminar">
-            <form action="" id="eliminar__forma" class="eliminar_forma hidden">
-                <label for="eliminar__forma__boton" id="eliminar__forma__label">¿Deseas eliminar un alimento?</label>
-                <button type="button" class="eliminar__forma__boton" value="Sí">Sí</button>
-                <button type="button" class="eliminar__forma__boton" value="No">No</button>
-            </form>
-            <form action="" class="eliminar__categoria hidden" id="eliminar_categoria">
-                <label for="" class="eliminar__categoria__label">Selecciona la clasificación del alimento</label>
-                <select name="" id="forma_categoria" class="eliminar__categoria__seleccion">
-                    <option value="" class="eliminar__categoria__select__option"></option>
-                    <option value="frutas" class="eliminar__categoria__select__option">Frutas</option>
-                    <option value="lacteos" class="eliminar__categoria__select__option">Lácteos</option>
-                    <option value="congelados" class="eliminar__categoria__select__option">Congelados</option>
-                    <option value="dulces" class="eliminar__categoria__select__option">Dulces</option>
-                </select>
-                <button type="button" class="eliminar__categoria__select__button" onclick="categoriaElimina();">Seleccionar</button>
-            </form>
-        </div>
-        <dialog id="ingreso">
-            <form action="" class="ingreso__forma">
-                <label for="" class="ingreso__forma__label">¿Deseas agregar un alimento a tu lista de compras?</label>
-                <button type="button" class="ingreso__forma__boton" onclick="seleccionUsuario('Sí');">Sí</button>
-                <button type="button" class="ingreso__forma__boton" onclick="seleccionUsuario('No');">No</button>
-            </form>
-        </dialog>
-        <!-- <form class="informacionAlimento">
-            <label for="alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
-            <input type="text" name="" id="informacionAlimento__input" name="alimento" placeholder="Nombre del alimento">
-            <label for="categoria_alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
-            <select name="categoria_alimento" id="informacionAlimento__seleccion" disabled>
-                <option value="" class="informacionAlimento__seleccion__categoria">Frutas</option>
-                <option value="" class="informacionAlimento__seleccion__categoria">Lácteos</option>
-                <option value="" class="informacionAlimento__seleccion__categoria">Congelados</option>
-                <option value="" class="informacionAlimento__seleccion__categoria">Dulces</option>
-            </select>
-        </form> -->
-        <dialog id="alimento">
-            <form class="informacionAlimento">
+        <section class="aplicacion">
+            <p></p>
+    
+            <h2>📌 Pasos para ejecutar la aplicación:</h2>
+            <p>Hoy tocó experimentar con arreglos. Generé un pequeño sistema para gestionar una lista de compras que te puede funcionar para gestionar tu compra de artículos en el mercado. Usé `push` para agregar nuevas y `filter` para eliminarlas. Además, por medio de manipulación del DOM generé un sistema para que puedas verlas aquí en la página. ¡Ahora mi lista de compras parece ordenada (o casi)!</p>
+            <ul>
+                <li>1️⃣ Da click en el botón <span>¡Vamos a intentarlo!</span></li>
+                <li>2️⃣ Indica si quieres agregar un artículo a tu lista de compras 🛒</li>
+                <li>3️⃣ Ingresa el nombre del artículo y a cuál de las 4 categorías disponibles pertenece. Da click en guardar 💾</li>
+                <li>4️⃣ Repite los pasos 2 y 3 para ingresar el total de artículos de tu lista de compras. Una vez que la completes, indica al sistema que ya no quieres agregar otro artículo. Es entonces cuando el sistema te mostrará la lista de artículos que ingresaste 😀</li>
+                <li>5️⃣ Si deseas eliminar alguno de los artículos a la lista de compras, da click en el botón Sí en la pregunta <span>¿Deseas eliminar un alimento?</span></li>
+                <li>6️⃣ Indica la categoría a la que pertenece el artículo que quieres eliminar</li>
+                <li>7️⃣ En el listado que se despliega, selecciona el artículo que ya no deseas y da click en eliminar.</li>
+                <li>8️⃣ Edita tu lista de compras tantas veces lo requieras 9️⃣</li>
+            </ul>
+            
+        </section>
+        <section class="ejecucion">
+            <div class="iniciar">
+                <button type="button" class="iniciar__boton" onclick="cuadroDeDialogo();">¡Vamos a intentarlo!</button>
+            </div>
+            <div class="eliminar">
+                <form action="" id="eliminar__forma" class="eliminar_forma hidden">
+                    <label for="eliminar__forma__boton" id="eliminar__forma__label">¿Deseas eliminar un alimento?</label>
+                    <button type="button" class="eliminar__forma__boton" value="Sí">Sí</button>
+                    <button type="button" class="eliminar__forma__boton" value="No">No</button>
+                </form>
+                <form action="" class="eliminar__categoria hidden" id="eliminar_categoria">
+                    <label for="" class="eliminar__categoria__label">Selecciona la clasificación del alimento</label>
+                    <select name="" id="forma_categoria" class="eliminar__categoria__seleccion">
+                        <option value="" class="eliminar__categoria__select__option"></option>
+                        <option value="frutas" class="eliminar__categoria__select__option">Frutas</option>
+                        <option value="lacteos" class="eliminar__categoria__select__option">Lácteos</option>
+                        <option value="congelados" class="eliminar__categoria__select__option">Congelados</option>
+                        <option value="dulces" class="eliminar__categoria__select__option">Dulces</option>
+                    </select>
+                    <button type="button" class="eliminar__categoria__select__button" onclick="categoriaElimina();">Seleccionar</button>
+                </form>
+            </div>
+            <dialog id="ingreso">
+                <form action="" class="ingreso__forma">
+                    <label for="" class="ingreso__forma__label">¿Deseas agregar un alimento a tu lista de compras?</label>
+                    <button type="button" class="ingreso__forma__boton" onclick="seleccionUsuario('Sí');">Sí</button>
+                    <button type="button" class="ingreso__forma__boton" onclick="seleccionUsuario('No');">No</button>
+                </form>
+            </dialog>
+            <!-- <form class="informacionAlimento">
                 <label for="alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
-                <input type="text" id="informacionAlimento__input" name="alimento" placeholder="Nombre del alimento">
+                <input type="text" name="" id="informacionAlimento__input" name="alimento" placeholder="Nombre del alimento">
                 <label for="categoria_alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
                 <select name="categoria_alimento" id="informacionAlimento__seleccion" disabled>
-                    <option value="" class="informacionAlimento__seleccion__categoria"></option>
-                    <option value="Frutas" class="informacionAlimento__seleccion__categoria">Frutas</option>
-                    <option value="Lácteos" class="informacionAlimento__seleccion__categoria">Lácteos</option>
-                    <option value="Congelados" class="informacionAlimento__seleccion__categoria">Congelados</option>
-                    <option value="Dulces" class="informacionAlimento__seleccion__categoria">Dulces</option>
+                    <option value="" class="informacionAlimento__seleccion__categoria">Frutas</option>
+                    <option value="" class="informacionAlimento__seleccion__categoria">Lácteos</option>
+                    <option value="" class="informacionAlimento__seleccion__categoria">Congelados</option>
+                    <option value="" class="informacionAlimento__seleccion__categoria">Dulces</option>
                 </select>
-                <button type="button" id="informacionAlimento__boton" onclick="guardarAlimento()">Guardar 💾</button>
-            </form>
-        </dialog>
-        <dialog id="mensajeGuardado">
-            <p id="mensajeGuardado__texto"></p>
-            <button type="button" id="mensajeGuardado__boton" onclick="continuar();">Aceptar</button>
-        </dialog>
-        <div class="resultados">
-            <div class="resultados__categorias" id="resultados__frutas">
-                <h2 class="resultados__categorias_titulo" id="titulo_frutas"></h2>
-                <ul class="resultados__categorias__lista" id="listado_frutas"></ul>
-                <form action="" class="resultados__categorias__forma hidden" id="eliminar_fruta">
-                    <label for="Lista_frutas" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
-                    <select name="Lista_frutas" id="Lista_frutas">
-                        <option value=""></option>
+            </form> -->
+            <dialog id="alimento">
+                <form class="informacionAlimento">
+                    <label for="alimento" class="informacionAlimento__label">¿Qué alimento te gustaría agregar?</label>
+                    <input type="text" id="informacionAlimento__input" name="alimento" placeholder="Nombre del alimento">
+                    <label for="categoria_alimento" class="informacionAlimento__label">Indica la categoría a la que pertenece</label>
+                    <select name="categoria_alimento" id="informacionAlimento__seleccion" disabled>
+                        <option value="" class="informacionAlimento__seleccion__categoria"></option>
+                        <option value="Frutas" class="informacionAlimento__seleccion__categoria">Frutas</option>
+                        <option value="Lácteos" class="informacionAlimento__seleccion__categoria">Lácteos</option>
+                        <option value="Congelados" class="informacionAlimento__seleccion__categoria">Congelados</option>
+                        <option value="Dulces" class="informacionAlimento__seleccion__categoria">Dulces</option>
                     </select>
-                    <button type="button" class="resultados__categorias__forma__boton" onclick="frutaElegida();">Elminar</button>
+                    <button type="button" id="informacionAlimento__boton" onclick="guardarAlimento()">Guardar 💾</button>
                 </form>
+            </dialog>
+            <dialog id="mensajeGuardado">
+                <p id="mensajeGuardado__texto"></p>
+                <button type="button" id="mensajeGuardado__boton" onclick="continuar();">Aceptar</button>
+            </dialog>
+            <div class="resultados">
+                <div class="resultados__categorias" id="resultados__frutas">
+                    <h2 class="resultados__categorias_titulo" id="titulo_frutas"></h2>
+                    <ul class="resultados__categorias__lista" id="listado_frutas"></ul>
+                    <form action="" class="resultados__categorias__forma hidden" id="eliminar_fruta">
+                        <label for="Lista_frutas" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
+                        <select name="Lista_frutas" id="Lista_frutas">
+                            <option value=""></option>
+                        </select>
+                        <button type="button" class="resultados__categorias__forma__boton" onclick="frutaElegida();">Elminar</button>
+                    </form>
+                </div>
+                <div class="resultados__categorias" id="resultados__lacteos">
+                    <h2 class="resultados__categorias_titulo" id="titulo_lacteos"></h2>
+                    <ul class="resultados__categorias__lista" id="listado_lacteos"></ul>
+                    <form action="" class="resultados__categorias__forma hidden" id="eliminar_lacteo">
+                        <label for="Lista_lacteos" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
+                        <select name="Lista_lacteos" id="Lista_lacteos">
+                            <option value=""></option>
+                        </select>
+                        <button type="button" class="resultados__categorias__forma__boton" onclick="lacteoElegido();">Elminar</button>
+                    </form>
+                </div>
+                <div class="resultados__categorias" id="resultados__congelados">
+                    <h2 class="resultados__categorias_titulo" id="titulo_congelados"></h2>
+                    <ul class="resultados__categorias__lista" id="listado_congelados"></ul>
+                    <form action="" class="resultados__categorias__forma hidden" id="eliminar_congelado">
+                        <label for="Lista_congelados" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
+                        <select name="Lista_congelados" id="Lista_congelados">
+                            <option value=""></option>
+                        </select>
+                        <button type="button" class="resultados__categorias__forma__boton" onclick="congeladoElegido()">Elminar</button>
+                    </form>
+                </div>
+                <div class="resultados__categorias" id="resultados__dulces">
+                    <h2 class="resultados__categorias_titulo" id="titulo_dulces"></h2>
+                    <ul class="resultados__categorias__lista" id="listado_dulces"></ul>
+                    <form action="" class="resultados__categorias__forma hidden" id="eliminar_dulce">
+                        <label for="Lista_dulces" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
+                        <select name="Lista_dulces" id="Lista_dulces">
+                            <option value=""></option>
+                        </select>
+                        <button type="button" class="resultados__categorias__forma__boton" onclick="dulceElegido();">Elminar</button>
+                    </form>
+                </div>
             </div>
-            <div class="resultados__categorias" id="resultados__lacteos">
-                <h2 class="resultados__categorias_titulo" id="titulo_lacteos"></h2>
-                <ul class="resultados__categorias__lista" id="listado_lacteos"></ul>
-                <form action="" class="resultados__categorias__forma hidden" id="eliminar_lacteo">
-                    <label for="Lista_lacteos" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
-                    <select name="Lista_lacteos" id="Lista_lacteos">
-                        <option value=""></option>
-                    </select>
-                    <button type="button" class="resultados__categorias__forma__boton" onclick="lacteoElegido();">Elminar</button>
-                </form>
-            </div>
-            <div class="resultados__categorias" id="resultados__congelados">
-                <h2 class="resultados__categorias_titulo" id="titulo_congelados"></h2>
-                <ul class="resultados__categorias__lista" id="listado_congelados"></ul>
-                <form action="" class="resultados__categorias__forma hidden" id="eliminar_congelado">
-                    <label for="Lista_congelados" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
-                    <select name="Lista_congelados" id="Lista_congelados">
-                        <option value=""></option>
-                    </select>
-                    <button type="button" class="resultados__categorias__forma__boton" onclick="congeladoElegido()">Elminar</button>
-                </form>
-            </div>
-            <div class="resultados__categorias" id="resultados__dulces">
-                <h2 class="resultados__categorias_titulo" id="titulo_dulces"></h2>
-                <ul class="resultados__categorias__lista" id="listado_dulces"></ul>
-                <form action="" class="resultados__categorias__forma hidden" id="eliminar_dulce">
-                    <label for="Lista_dulces" class="resultados__categorias__forma__label">¿Qué alimento quieres eliminar?</label>
-                    <select name="Lista_dulces" id="Lista_dulces">
-                        <option value=""></option>
-                    </select>
-                    <button type="button" class="resultados__categorias__forma__boton" onclick="dulceElegido();">Elminar</button>
-                </form>
-            </div>
-        </div>
+        </section>
+        <section class="aplicacion">
+            <p>¡Genera y edita tu lista de compras como lo requieras! ✨</p>
+
+            <p>Consulta la lógica de ejecución en javascript en el siguiente enlace:</p>
+            <div class="repositorio_caja">
+                <a href="https://github.com/MiguelFigueroa02/7DaysOfCode/blob/main/day5y6/day5_y_6.js" id="enlace_respositorio">Explora el código en GitHub <i class="fa-solid fa-code"></i></a>
+            </div>   
+        </section>
     </main>
-    <a href="./index.html">Volver</a>
+    <footer class="pie">
+        <div class="pie__redes">
+            <p class="pie__redes__description">¿Crees que pudiermos agregar alguna función adicional? Puedes hacérmelo saber en mis redes: </p>
+            <div class="pies__redes_caja_enlaces">
+                <a href="https://www.linkedin.com/in/miguelims" class="pie__redes__enlace"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/MiguelFigueroa02" class="pie__redes__enlace"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+    </footer>
 </body>
 </html>

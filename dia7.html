@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./day7/style.css">
     <script src="./day7/script.js"></script>
     <title>Día 7</title>
 </head>
 <body>
+    <header>
+        <nav class="navegacion">
+            <div class="navegacion__logo">
+                <h2 class="navegacion__logo__titulo">Día 7</h2>
+            </div>
+            <div class="navegacion__enlaces">
+                <a href="./index.html" class="navegacion__enlaces_a">Inicio</a>
+                <a href="./about.html" class="navegacion__enlaces_a">Acerca de mí</a>
+            </div>
+        </nav>
+    </header>
     <main class="principal">
+        <section class="aplicacion">
+            <p></p>
+    
+            <h2>📌 Pasos para ejecutar la aplicación:</h2>
+            <p>¡Día 7 del reto de JavaScript completado! Hoy me puse manos a la obra y creé una calculadora sencilla usando funciones. Con solo unas líneas de código, ahora puedo sumar, restar, multiplicar y dividir de forma rápida y eficiente. Es un pequeño pero poderoso ejemplo de cómo JavaScript puede facilitarnos la vida. ¿Te animas a probarla? Úsala en tus cálculos diarios y descubre lo útil que puede ser. 🚀</p>
+            <p>La operación es muy sencilla, parecida a la calculadora que seguramente tienes en tu celular:</p>
+            <ul>
+                <li>1️⃣ Da click en los botones de para ingresar el número inicial. La aplicación irá mostrándote el número de acuerdo a las cifras que ingreses</li>
+                <li>2️⃣ A continuación, da click en el botón correspondiente a la operación que quieres ejecutar (suma, resta, multiplicación o división)</li>
+                <li>3️⃣ Al igual que con el primer número, utiliza los botones para ingresar un segundo número</li>
+                <li>4️⃣ Da click en el botón igual "=" para obtener el resultado de la operación.</li>
+                <li>5️⃣ Puedes continuar haciendo cálculos con el resultado de la operación anterior seleccionando el botón correspondiente al cálculo que quieres ejecutar o reiniciar la calculadora haciendo click en el botón <span>"AC"</span></li>
+            </ul>
+            
+        </section>
         <section class="calculadora">
             <div id="display">
                 <p id="pantalla"></p>
@@ -34,12 +61,25 @@
             </div>
             <a href="./index.html">Volver</a>
         </section>
-        <section class="descripción">
+        <!-- <section class="descripción">
             
-        </section>
+        </section> -->
+        <section class="aplicacion">
+            <p>Te invito a probar mi calculadora y a hacer tantos cálculos como requieras</p>
 
+            <p>Consulta la lógica de ejecución en javascript en el siguiente enlace:</p>
+            <div class="repositorio_caja">
+                <a href="https://github.com/MiguelFigueroa02/7DaysOfCode/blob/main/day7/script.js" id="enlace_respositorio">Explora el código en GitHub <i class="fa-solid fa-code"></i></a>
+            </div>   
+        </section>
     </main>
-    <footer>
+    <footer class="pie">
+        <div class="pie__redes">
+            <p class="pie__redes__description">No olvides dejarme algún mensaje acerca de esta aplicación en mis redes: </p>
+            <div class="pies__redes_caja_enlaces">
+                <a href="https://www.linkedin.com/in/miguelims" class="pie__redes__enlace"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/MiguelFigueroa02" class="pie__redes__enlace"><i class="fa-brands fa-github"></i></a>
+            </div>
 
     </footer>
 </body>
