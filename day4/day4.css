@@ -4,24 +4,27 @@
 /* Fuente enlaces */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 /* Fuente de título */
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+/* Fuente botones */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 /* Fuente cuerpo */
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 :root{
     --color-fondo:#2D9DA7;
     --color-fuentes-bordes: #013334 ;
-    --color-uno: #2D9DA7 ;
+    --color-uno: #04F06A;
     --color-dos: #F5CA9E;
-    --color-tres:  #EF2917;
-    --color-boton: #2A4494;
+    --color-tres:  #838383;
+    --color-boton: #040496;
     --color-boton-fuente: #ffffff;
     --color-boton-deshabilitado: #122C34;
     --color-animacion-1: #AEECEF;
     --color-animacion-2: #80DED9;
     --color-animacion-3: #068D9D;
-    --fuentes-cuerpo: "Roboto Flex", sans-serif;
+    --fuentes-cuerpo: "Open Sans", sans-serif;
+    --fuentes-botones:"Press Start 2P", system-ui;
     --fuente-enlaces: "Bebas Neue", sans-serif;
-    --fuente-titulo: "Teko", sans-serif;
+    --fuente-titulo: "Jersey 10", sans-serif;
     --animacion-fade-in: fadeIn 0.6s ease-out 2s;
 }
 html{
@@ -34,7 +37,7 @@ body{
     font-family: var(--fuentes-cuerpo);
     font-style: normal;
     text-align: center;
-    font-size: 1.0rem;
+    font-size: 0.95rem;
     line-height: 1.2;
     box-sizing: border-box;
     animation-name: change-color;
@@ -145,14 +148,16 @@ header{
 
 .navegacion__enlaces_a, .navegacion__enlaces_a:visited{
     text-decoration: none;
-    font-family: var(--fuente-enlaces);
+    font-family: var(--fuente-titulo);
+    letter-spacing: 0.2rem;
     font-size: 1.5rem;
     color: var(--color-fuentes-bordes);
+    transition: all 0.6s ease;
 }
 .navegacion__enlaces_a:hover{
-    letter-spacing: 0.1rem;
-    transition: letter-spacing 0.2s ease-in-out;
-    text-shadow: var(--color-tres) 0 0 0.5rem;
+    letter-spacing: 0.25rem;
+    /* transition: letter-spacing 0.2s ease-in-out; */
+    text-shadow: 0 0.1rem 0.2rem var(--color-boton-fuente), 0 0.5rem 0 var(--color-tres);
 }
 .aplicacion{
     width: 90%;
@@ -168,16 +173,17 @@ header{
     align-items: center;
 }
 #botones_Ciclo_While{
-    width: 100%;
+    width: 80%;
     /* display: flex; */
     align-items: center;
     justify-content: center;
 }
 .juego__dialogo__forma{
-    width: 80%;
+    width: 60%;
     display: flex;
-    justify-content: space-between;
-    gap: 0.2rem;
+    justify-content: center;
+    gap: 5%;
+    flex-wrap: wrap;
 }
 .escondido{
     display: none;
@@ -185,31 +191,43 @@ header{
 .optional__content{
     margin-bottom: 0.5rem;
 }
-button{
+.resultado__iniciar, .eleccion_juego, #boton__reinicio{
     height: 1.5rem;
     /* width: 5rem; */
     background-color: var(--color-boton);
     border: none;
     /* border-radius: 0.5rem; */
-    box-shadow: none;
+    font-family: var(--fuente-titulo);
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    margin-right: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0 var(--color-tres);
     color: var(--color-boton-fuente);
     transition: all 0.8s ease;
 }
-button:disabled{
+.resultado__iniciar:disabled,.eleccion_juego:disabled, #boton__reinicio:disabled{
     background-color: var(--color-boton-deshabilitado);
     animation: none;
+    box-shadow: none;
 }
-button:not(:disabled):hover{
+.resultado__iniciar:not(:disabled):hover,.eleccion_juego:not(:disabled):hover, #boton__reinicio:not(:disabled):hover{
     /* scale: 1.3; */
     border: var(--color-boton) 0.1rem solid;
     background-color: transparent;
     color: var(--color-boton);
-    font-weight: 600;
+    /* font-weight: 600; */
+    box-shadow: none;
 }
 .juego_boton{
-    width: 2.0rem;
+    width: 20%;
+    height: 1.8rem;
+    font-family: var(--fuentes-botones);
+    margin-bottom: 5%;
     border-radius: none;
-    animation: animateButton 1.2s ease infinite;
+    box-shadow: 0.3rem 0.3rem 0 var(--color-fuentes-bordes);
+    animation: animateButton 1.5s ease infinite;
+    background-color: var(--color-uno);
+    color: var(--color-fuentes-bordes);
     transition: all 0.5s ease;
 }
 @keyframes animateButton {
@@ -224,16 +242,27 @@ button:not(:disabled):hover{
     }
 }
 
-.juego_boton:hover{
+.juego_boton:not(:disabled):hover{
     animation: none;
+    font-size: 1.1rem;
+    transform: scaleY(1.1);
+    padding: 0.2rem;
     border-radius: 0.5rem;
+    /* box-shadow: 0.2rem 0.2rem 0 var(--color-fuentes-bordes); */
+    box-shadow: none;
+}
+.juego_boton:disabled{
+    animation: none;
+    box-shadow: none;
+    background-color: var(--color-fuentes-bordes);
+    color: var(--color-boton-fuente);
 }
 .resultados__botones p{
     font-weight: 600;
     font-size: 1.2rem;
 }
 .animacion__texto{
-    animation: variables 0.9s ease-in-out;
+    animation: variables 1.2s ease-in-out;
 }
 @keyframes variables {
     0%{
@@ -258,25 +287,51 @@ button:not(:disabled):hover{
     display: flex;
     justify-content: center;
 }
-
+.resultado__parrafo{
+    font-family: var(--fuentes-botones);
+    margin-bottom: 1.5rem;
+    width: 51ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.3rem solid;
+    /* animation: blink 0.5s step-end infinite alternate; */
+}
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+}
+.escritura{
+    animation: typing 3s steps(51), blink 0.5s step-end infinite alternate;
+}
+@keyframes typing {
+    from{
+        width: 0;
+    }
+}
 #enlace_respositorio{
     position: relative;
-    line-height: 2rem  ;
+    line-height: 2rem;
     text-align: center;
     text-decoration: none;
+    font-family: var(--fuente-titulo);
+    font-size: 1.4rem;
     color: var(--color-fuentes-bordes);
     padding: 1%;
     transition: all 0.8s ease-in;
 }
+#enlace_respositorio i{
+    font-size: 0.9rem;
+}
 #enlace_respositorio:hover{
-    font-size: 1.3rem;
-    font-weight: 600;
+    transform: scale(1.2);
+    text-shadow: 0 0.2rem 0 var(--color-tres);
 }
 #enlace_respositorio::before, #enlace_respositorio::after{
     position:absolute;
     content: "";
-    left: 0;
-    right: 0;
+    /* left: 0; */
+    /* right: 0; */
     height: 0.2rem;
     width: 0;
     background: var(--color-fuentes-bordes);
@@ -287,6 +342,10 @@ button:not(:disabled):hover{
     top: inherit;
     left: 0;
     bottom: 0;
+}
+#enlace_respositorio::before{
+    right: 0;
+    top: 0;
 }
 #enlace_respositorio:hover::before,#enlace_respositorio:hover::after{
     width: 100%;
@@ -353,6 +412,13 @@ footer{
     .botones__contenido{
         flex-direction: column;
     }
+    .resultado__parrafo{
+        width: 100%;
+        white-space: normal;
+        word-break:break-all;
+        border-color: transparent;
+        /* animation: none; */
+    }
     .pie__redes{
         flex-direction: column;
         width: 100%;
@@ -379,4 +445,7 @@ footer{
 }
 .hidden{
     display: none;
+}
+.botones_Flex{
+    display: flex;
 }

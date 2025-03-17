@@ -4,6 +4,7 @@ let eleccionUsuario;
 function mostrarDialogo() {
     let cuadroDialogo = document.getElementById('pregunta');
     cuadroDialogo.showModal();
+    document.getElementById('probar').setAttribute('disabled','true');
 }
 function camino(decision){
     eleccionUsuario = decision;
@@ -61,7 +62,7 @@ function botonResultado() {
         mostrarDialogo();
     }
     if (especializaciones.length === 4) {
-        document.getElementById('probar').setAttribute('disabled','true');
+        // document.getElementById('probar').setAttribute('disabled','true');
         console.log('continua');
         mostrarDialogo2();
     }

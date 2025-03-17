@@ -22,6 +22,7 @@ function cicloWhile() {
   esconderBotonesJuegos();
   let botonesCicloWhile = document.getElementById('botones_Ciclo_While');
   botonesCicloWhile.classList.remove('hidden');
+  botonesCicloWhile.classList.add('botones_Flex');
 }
 // function eleccionUsuario(valor,id) {
 //     let numeroUsuario = valor;
@@ -97,6 +98,8 @@ function reinicio() {
     // encendidoBotones();
     let esconderCicloWhile = document.getElementById('botones_Ciclo_While');
     esconderCicloWhile.classList.add('hidden');
+    esconderCicloWhile.classList.remove('botones_Flex');
+    // botonesCicloWhile.classList.remove('botones_Flex');
     let botonJugar = document.querySelector('.resultado__iniciar');
     botonJugar.removeAttribute('disabled');
     let botonreiniciar = document.getElementById('boton__reinicio');
@@ -114,11 +117,11 @@ function clickUsuario() {
     juego();
 }
 function juego() {
-    let textoUno = 'Sigue intetando.'
+    let textoUno = 'Sigue intetando, '
     while(intentoActual<=maximoIntentos){
         if (numeroJesus === numeroSecreto) {
             // alert(`Felicidades, el número secreto es ${numeroSecreto}`);
-            let textoGanador = `Felicidades, el número secreto es ${numeroSecreto}. `;
+            let textoGanador = `¡Felicidades! El número secreto que buscabas es ${numeroSecreto}. `;
             let textoGanador2 = `Atinaste en ${intentoActual}` + " " + (intentoActual === 1 ? 'intento': 'intentos');
             let textoFinal = textoGanador + textoGanador2;
             mensaje(textoFinal);
@@ -127,7 +130,7 @@ function juego() {
           } else {
             if (maximoIntentos === intentoActual) {
             //   alert(`Fallaste, el número secreto es ${numeroSecreto}`);
-                let textoFault = `Fallaste, el número secreto es ${numeroSecreto}`;
+                let textoFault = `Fallaste esta vez. El número secreto correcto es ${numeroSecreto}.`;
                 mensaje(textoFault);
                 apagadoBotones();
                 break;
@@ -135,11 +138,11 @@ function juego() {
                 let textoContinuar;
                 if (numeroSecreto > numeroJesus) {
                     // alert(textoUno+' El número secreto es mayor');
-                    textoContinuar = textoUno+' El número secreto es mayor';
+                    textoContinuar = textoUno+'el número secreto es un poco mayor.';
                     mensaje(textoContinuar);
                 } else if(numeroSecreto < numeroJesus){
                     // alert(textoUno+' El número secreto es menor');
-                    textoContinuar = textoUno+' El número secreto es menor';
+                    textoContinuar = textoUno+'el número secreto es un poco menor.';
                     mensaje(textoContinuar);
                 }
             //   alert("Sigue intetando");
@@ -156,6 +159,13 @@ function juego() {
     let textoMensaje = texto;
     let parrafo = document.querySelector('.resultado__parrafo');
     parrafo.innerHTML = textoMensaje;
+    if (parrafo.classList.contains('escritura')) {
+      parrafo.classList.remove('escritura');
+      void parrafo.offsetWidth;
+      parrafo.classList.add('escritura');
+    } else{
+      parrafo.classList.add('escritura');
+    }
   }
 // función con ciclo for
 let numeroUsuario;
