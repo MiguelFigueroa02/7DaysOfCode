@@ -413,11 +413,17 @@ footer{
         flex-direction: column;
     }
     .resultado__parrafo{
-        width: 100%;
+        width: 90%;
         white-space: normal;
-        word-break:break-all;
+        /* word-break:break-all; */
         border-color: transparent;
-        /* animation: none; */
+        animation: none;
+    }
+    .juego__dialogo__forma{
+        width: 80%;
+    }
+    .eleccion_juego{
+        margin-bottom: 0.8rem;
     }
     .pie__redes{
         flex-direction: column;
