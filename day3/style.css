@@ -100,9 +100,20 @@ header{
     letter-spacing: 0.2rem;
     font-size: 2rem;
     font-weight: 500;
-    Text-shadow: 
+    /* Text-shadow: 
       0.1rem 0.1rem 0 #d5d5d5, 
-      0.3rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+      0.3rem 0.3rem 0 rgba(0, 0, 0, 0.2); */
+    animation: logo 1.5s ease-in-out forwards;
+}
+@keyframes logo {
+    from{
+        text-shadow: none;
+    }
+    to{
+        Text-shadow: 
+            0.1rem 0.1rem 0 #d5d5d5, 
+            0.3rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+    }
 }
 .navegacion__enlaces{
     width: 40%;
@@ -131,68 +142,18 @@ header{
 .aplicacion ul li{
     list-style: none;
 }
-/* .botones__contenido{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-}
-.strings, .numbers{
-    list-style: none;
-}
-.numbers__lista, .strings__lista{
-    margin-bottom: 3%; */
-/* } */
-.cuestionario{
-    display: flex;
-    flex-direction: column;
-    border: var(--color-fuentes-bordes) solid 1px;
-    padding: 2%;
-    width: 50%;
-    border-radius: 2rem;
-    /* justify-content: center; */
-    align-items: center;
-    box-shadow: 0.5rem 0.5rem 0.8rem var(--color-fuentes-bordes);
-    gap: 0.5rem;
-}
-.cuestionario__cuadro{
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-}
-.cuestionario__pregunta{
-    /* border: #013334 solid 1px;   */
-    width: 80%;
-    padding: 0 3%;
-    text-align: left;
-    font-size: 0.8rem;
-}
-#cuestionario__nombre, #cuestionario__edad, #cuestionario__lenguaje{
-    width: 95%;
-    padding-left: 1.0rem;
-    border-radius: 0.5rem;
-    border: none;
-    transition: all 0.8s ease;
-}
-#cuestionario__nombre:focus, #cuestionario__edad:focus, #cuestionario__lenguaje:focus{
-    outline: none;
-    border: var(--color-fuentes-bordes) 0.05rem solid;
-    box-shadow: 0.1rem 0.1rem 0.3rem var(--color-boton-deshabilitado);
-}
-#formularioOpcional{
-    flex-direction: column;
-    align-items: center; 
-}
+
 .escondido{
     display: none;
 }
-.optional__content{
+/* .optional__content{
     margin-bottom: 0.5rem;
-}
+} */
 button{
+    cursor: pointer;
     height: 1.5rem;
-    width: 5rem;
+    width: 6rem;
+    margin-right: 0.2rem;
     background-color: var(--color-boton);
     border: none;
     border-radius: 0.5rem;
@@ -204,19 +165,27 @@ button:disabled{
     background-color: var(--color-boton-deshabilitado);
 }
 button:not(:disabled):hover{
-    scale: 1.3;
+    /* scale: 1.3; */
     border: var(--color-boton) 0.1rem solid;
     background-color: transparent;
     color: var(--color-boton);
     font-weight: 600;
 }
-.resultados__botones p{
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-.animacion__texto{
+
+#pregunta, #nuevaTec{
+    border-radius: 1rem;
+    width: 40%;
+    border: none;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--color-boton-deshabilitado);
     animation: variables 0.9s ease-in-out;
     /* añadir a clase optional__mensaje */
+}
+#pregunta__form, #nuevaTec__Form{
+    display: flex;
+    gap: 1.2rem;
+}
+#nuevaTec__Form{
+    flex-direction: column;
 }
 @keyframes variables {
     0%{
@@ -236,6 +205,41 @@ button:not(:disabled):hover{
         opacity: 1;
     }
 }
+#camino, #eleccionEspecializacion{
+    margin-bottom: 0.5rem;
+}
+.texto__animacion{
+    animation: textoAnimado 0.8s ease forwards;
+}
+@keyframes textoAnimado {
+    from{
+        opacity: 0;
+        transform: scale(1.3);
+        text-shadow: 0 0 1.1rem var(--color-fuentes-bordes);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: 0 0 0 var(--color-fuentes-bordes);
+    }
+}
+#resultado__mensaje, #tecnologiaResultado__mensaje, #mensajefinal{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+#tecnologias__input{
+    border: none;
+    height: 1.5rem;
+    margin-right: 0.3rem;
+    border-radius: 0.3rem;
+}
+#tecnologias__input:focus{
+    outline: none;
+    box-shadow: 0.1rem 0.2rem 0.2rem var(--color-fuentes-bordes);
+}
+#camino__label, #especializaciones__pregunta{
+    margin-right: 0.5rem;
+}
 .repositorio_caja{
     width: 100%;
     display: flex;
@@ -243,8 +247,6 @@ button:not(:disabled):hover{
 }
 
 #enlace_respositorio{
-    /* width: 800px; */
-    /* border: red solid 3px; */
     position: relative;
     line-height: 2rem  ;
     text-align: center;
@@ -260,12 +262,11 @@ button:not(:disabled):hover{
 #enlace_respositorio::before, #enlace_respositorio::after{
     position:absolute;
     content: "";
-    left: 0;
-    right: 0;
     height: 0.2rem;
     width: 0;
+    opacity: 0;
     background: var(--color-fuentes-bordes);
-    transition: all 0.8s ease;
+    transition: all 0.8s ease-in;
 }
 #enlace_respositorio::after{
     right: inherit;
@@ -273,12 +274,13 @@ button:not(:disabled):hover{
     left: 0;
     bottom: 0;
 }
+#enlace_respositorio::before{
+    top: 0;
+    right: 0;
+}
 #enlace_respositorio:hover::before,#enlace_respositorio:hover::after{
     width: 100%;
-    /* transition: all 0.8s ease; */
-}
-#comparar__seccion_resultado{
-    font-size: 1.5rem;
+    opacity: 1;
 }
 footer{
     width: 90%;
@@ -316,6 +318,10 @@ footer{
     background-color: var(--color-fuentes-bordes);
     color: var(--color-boton-fuente);
 }
+.pie__redes__description{
+    width: 50%;
+    font-size: 1.0rem;
+}
 @media (max-width: 500px){
     .navegacion__logo{
         width: 100%;
@@ -333,11 +339,34 @@ footer{
         padding: 0% 5%;
         width: 90%;
     }
+    #camino, #eleccionEspecializacion{
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    #pregunta, #nuevaTec{
+        width: 80%;
+    }
+    #pregunta__form, #nuevaTec__Form{
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    #pregunta__form label{
+        text-align: center;
+    }
+    .pregunta__botones__contenedor, .nuevaTec__button_container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
     .botones__contenido{
         flex-direction: column;
     }
     .pie__redes{
         flex-direction: column;
+        width: 100%;
+    }
+    .pie__redes__description{
         width: 100%;
     }
     .pies__redes_caja_enlaces{
@@ -364,3 +393,6 @@ footer{
 .hidden{
     display: none;
 }
+.flex{
+    display: flex;
+}   

@@ -9,12 +9,14 @@ function camino(decision){
     eleccionUsuario = decision;
     if (decision === 'Sí') {
         document.querySelector('#camino').classList.remove('hidden');
+        document.querySelector('#camino').classList.add('flex');
     } else{
         mostrarDialogo2();
     }
 }
 function especializacion(eleccion) {
     document.querySelector('#eleccionEspecializacion').classList.remove('hidden');
+    document.querySelector('#eleccionEspecializacion').classList.add('flex');
     document.querySelectorAll('.camino__boton').forEach((elemento)=>{
         elemento.setAttribute('disabled','true');
     })
@@ -30,6 +32,15 @@ function lenguaje(elegido) {
     let texto = `Aprenderás ${elegido}`
     let mensajePantalla = document.getElementById('resultado__mensaje');
     mensajePantalla.innerHTML = texto;
+
+    if (mensajePantalla.classList.contains('texto__animacion')) {
+        mensajePantalla.classList.remove('texto__animacion');
+        void mensajePantalla.offsetWidth;
+        mensajePantalla.classList.add('texto__animacion');
+    } else{
+        mensajePantalla.classList.add('texto__animacion');
+    }
+
     if (especializaciones.includes(elegido)) {
         console.log('Intenta Nuevamente');
         reinicio();
@@ -61,6 +72,7 @@ function reinicio() {
         return;
     } else {
         selectorCamino.add('hidden');
+        selectorCamino.remove('flex');
     }
     
     let selectorEspecializacion = document.querySelector('#eleccionEspecializacion').classList;
@@ -68,6 +80,7 @@ function reinicio() {
         return;
     } else{
         selectorEspecializacion.add('hidden');
+        selectorEspecializacion.remove('flex');
     }
 
     let selectorResultado = document.getElementById('resultado').classList;
@@ -118,6 +131,15 @@ function nuevasTecnologias(valor) {
         let parrafoFinal = document.getElementById('mensajefinal');
         parrafoFinal.innerHTML = mensaje;
         console.log(mensaje);
+
+        if (parrafoFinal.classList.contains('texto__animacion')) {
+            parrafoFinal.classList.remove('texto__animacion');
+            void parrafoFinal.offsetWidth;
+            parrafoFinal.classList.add('texto__animacion');
+        } else{
+            parrafoFinal.classList.add('texto__animacion');
+        }
+
         let selectorTecnologia = document.getElementById('tecnologias').classList;
         if (selectorTecnologia.contains('hidden')) {
             return;
@@ -155,4 +177,11 @@ function textoTecnologia(texto) {
     document.getElementById('tecnologiaResultado').classList.remove('hidden');
     let textoFinal = document.querySelector('#tecnologiaResultado__mensaje');
     textoFinal.innerHTML = texto;
+    if (textoFinal.classList.contains('texto__animacion')) {
+        textoFinal.classList.remove('texto__animacion');
+        void textoFinal.offsetWidth;
+        textoFinal.classList.add('texto__animacion');
+    } else{
+        textoFinal.classList.add('texto__animacion');
+    }
 }

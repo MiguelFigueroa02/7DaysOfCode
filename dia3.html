@@ -40,8 +40,11 @@
         <dialog id="pregunta">
             <form id="pregunta__form" method="dialog">
                 <label for="pregunta__boton">¿Quieres seguir especializándote?</label>
-                <button class="pregunta__boton" onclick="camino('Sí');">Sí</button>
-                <button class="pregunta__boton" onclick="camino('No');">No</button>
+                <div class="pregunta__botones__contenedor">
+                    <button class="pregunta__boton" onclick="camino('Sí');">Sí</button>
+                    <button class="pregunta__boton" onclick="camino('No');">No</button>
+                </div>
+                
             </form>
         </dialog>
         <form class="camino hidden" id="camino">
@@ -63,7 +66,11 @@
         <dialog id="nuevaTec">
             <form method="dialog" id="nuevaTec__Form">
                 <label>¿Hay alguna otra tecnología que te gustaría aprender?</label>
-                <button class="nuevaTec__Form_button" onclick="nuevasTecnologias('Ok')">Ok!👍</button><button class="nuevaTec__Form_button" onclick="nuevasTecnologias('No')">No</button>
+                <div class="nuevaTec__button_container">
+                    <button class="nuevaTec__Form_button" onclick="nuevasTecnologias('Ok')">Ok!👍</button>
+                    <button class="nuevaTec__Form_button" onclick="nuevasTecnologias('No')">No</button>
+                </div>
+                
             </form>
         </dialog>
         <form action="" class="tecnologiasNuevas hidden" id="tecnologias">
