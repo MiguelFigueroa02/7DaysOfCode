@@ -1,21 +1,7 @@
-/*Día 7*/
-/* *{
-    margin: 0;
-    padding: 0;
-}
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-}
-.principal{
-    
-} */
- 
+
 /*Principal*/
+/* Fuente de pantalla de calculadora*/
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 /* Fuente enlaces */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 /* Fuente de título */
@@ -34,6 +20,7 @@ body{
     --color-animacion-1: #AEECEF;
     --color-animacion-2: #80DED9;
     --color-animacion-3: #068D9D;
+    --fuente-calculadora: "Electrolize", sans-serif;
     --fuentes-cuerpo: "Roboto Flex", sans-serif;
     --fuente-enlaces: "Bebas Neue", sans-serif;
     --fuente-titulo: "Teko", sans-serif;
@@ -207,83 +194,141 @@ header{
 .aplicacion ul li{
     list-style: none;
 }
-/* .botones__contenido{
+
+ .calculadora{
+    width: 45%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+ }
+ #display{
+    height: 20%;
     width: 100%;
+    border-radius: 1rem;
+    /* text-align: end; */
+    color: var(--color-boton-fuente);
+    background-color: var(--color-boton-deshabilitado);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+ }
+ #pantalla{
+    margin-right: 0.8rem;
+    font-size: 1.4rem;
+    font-family: var(--fuente-calculadora);
+    letter-spacing: 0.15rem;
+ }
+ .calculadora__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60%;
+ }
+ .boton_operacion{
+    display: flex;
+    align-items: center;
+    gap: 2.48%;
+    padding-left: 1%;
+    height: 10%;
+    width: 100%;
+ }
+ .boton_operacion button{
+    height: 100%;
+    width: 22.75%;
+ }
+ .numeros{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 100%;
+ }
+ .enteros{
     display: flex;
     justify-content: center;
-    gap: 5%;
-}
-.strings, .numbers{
-    list-style: none;
-}
-.numbers__lista, .strings__lista{
-    margin-bottom: 3%; */
-/* } */
-/* .cuestionario{
-    display: flex;
-    flex-direction: column;
-    border: var(--color-fuentes-bordes) solid 1px;
-    padding: 2%;
-    width: 50%;
-    border-radius: 2rem;
-    align-items: center;
-    box-shadow: 0.5rem 0.5rem 0.8rem var(--color-fuentes-bordes);
-    gap: 0.5rem;
-}
-.cuestionario__cuadro{
     width: 100%;
-    box-sizing: border-box;
+    height: 80%;
+    flex-wrap: wrap;
+    gap: 3%;
+    /* padding-top: 3%; */
+ }
+ .operadores{
     display: flex;
     flex-direction: column;
+    /* justify-content: start; */
+    height: 100%;
+    width: 23%;
+    justify-content: space-between;
+    /* padding-top: 1%; */
 }
-.cuestionario__pregunta{
-
-    width: 80%;
-    padding: 0 3%;
-    text-align: left;
-    font-size: 0.8rem;
+.cero__decimal{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+    height: 20%;
+    gap: 3%;
+    padding-left: 2%;
 }
-#cuestionario__nombre, #cuestionario__edad, #cuestionario__lenguaje{
-    width: 95%;
-    padding-left: 1.0rem;
-    border-radius: 0.5rem;
-    border: none;
-    transition: all 0.8s ease;
+.cero__decimal button{
+    height: 100%;
 }
-#cuestionario__nombre:focus, #cuestionario__edad:focus, #cuestionario__lenguaje:focus{
-    outline: none;
-    border: var(--color-fuentes-bordes) 0.05rem solid;
-    box-shadow: 0.1rem 0.1rem 0.3rem var(--color-boton-deshabilitado);
+#cero{
+    width: 63%;
 }
-#formularioOpcional{
-    flex-direction: column;
-    align-items: center; 
+#igualdad{
+    height: 73%;
+}
+/* .cero__decimal .aritmetica{
+    width: 30%;
 } */
-/* .escondido{
-    display: none;
-} */
+.number{
+    width: 30%;
+}
+.entero__content{
+    height: 25%;
+}
+#reinicio{
+    height: 20%;
+}
 .optional__content{
     margin-bottom: 0.5rem;
 }
 button{
-    height: 1.5rem;
+    /* height: 1.5rem; */
     /* width: 5rem; */
     background-color: var(--color-boton);
     border: none;
     border-radius: 0.5rem;
-    box-shadow: none;
+    box-shadow: 0.25rem 0.25rem 0 var(--color-boton-deshabilitado);
     color: var(--color-boton-fuente);
-    transition: all 0.8s ease;
+    /* transition: all 0.8s ease; */
 }
-button:disabled{
+/* button:disabled{
     background-color: var(--color-boton-deshabilitado);
+} */
+button:active{
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: none;
+    animation: push 0.15s linear 1;
 }
 button:not(:disabled):hover{
     /* scale: 1.3; */
     border: var(--color-boton) 0.1rem solid;
     background-color: transparent;
     color: var(--color-boton);
-    font-weight: 600;
+    /* font-weight: 600; */
+    /*  */
+}
+@keyframes push {
+    50%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 .resultados__botones p{
     font-weight: 600;
@@ -415,8 +460,12 @@ footer{
         padding: 0% 5%;
         width: 90%;
     }
-    .botones__contenido{
+    /* .botones__contenido{
         flex-direction: column;
+    } */
+    .calculadora{
+        width: 80%;
+        height: 55vh;
     }
     .pie__redes{
         flex-direction: column;
