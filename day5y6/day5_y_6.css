@@ -204,7 +204,7 @@ header{
 .numbers__lista, .strings__lista{
     margin-bottom: 3%; */
 /* } */
-.cuestionario{
+/* .cuestionario{
     display: flex;
     flex-direction: column;
     border: var(--color-fuentes-bordes) solid 1px;
@@ -243,7 +243,65 @@ header{
 #formularioOpcional{
     flex-direction: column;
     align-items: center; 
+} */
+#ingreso{
+    /* display: flex; */
+    border-radius: 1rem;
+    border: 0.1rem solid var(--color-fuentes-bordes);
+    box-shadow: 0.5rem 0.5rem 1rem var(--color-fuentes-bordes);
+    /* animation: primerDialog 1s ease; */
 }
+.ingreso__animation{
+    animation: primerDialog 1s ease;
+}
+@keyframes primerDialog {
+    0%{
+        opacity: 0;
+        transform: translateY(-75%);
+    }
+    75%{
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.ingreso__forma{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+.ingreso__forma__botones{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+.ingreso__forma__boton{
+    width: 30%;
+}
+
+#alimento{
+    width: 80%;
+    box-shadow: 0.5rem 0.5rem 1rem var(--color-fuentes-bordes); 
+    border-radius: 1rem;
+}
+.informacionAlimento{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+}
+#informacionAlimento__input{
+    height: 1.6rem;
+    padding-left: 0.5rem;
+}
+#informacionAlimento__input:focus{
+    outline: none;
+    box-shadow: -0.15rem 0.15rem 0.4rem var(--color-uno) inset;
+}
+
 .escondido{
     display: none;
 }
@@ -251,7 +309,7 @@ header{
     margin-bottom: 0.5rem;
 }
 button{
-    height: 1.5rem;
+    height: 2.0rem;
     /* width: 5rem; */
     background-color: var(--color-boton);
     border: none;

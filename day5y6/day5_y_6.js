@@ -11,6 +11,7 @@ let actualizarDulces = false;
 function cuadroDeDialogo() {
     let cuadro = document.getElementById('ingreso');
     cuadro.showModal();
+    cuadro.classList.add('ingreso__animation');
 }
 function salir() {
     let cuadro = document.getElementById('ingreso');
